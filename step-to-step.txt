@@ -1,0 +1,12 @@
+Twitter has changed its API
+
+https://www.youtube.com/watch?v=GQaPt-gQVRI
+https://www.youtube.com/watch?v=t5hD96EYAtU
+http://stackoverflow.com/questions/17049821/setting-up-twitter-api-getting-the-last-few-tweets
+https://webdevdoor.com/php/authenticating-twitter-feed-timeline-oauth
+https://github.com/abraham/twitteroauth
+https://twitteroauth.com/
+https://github.com/themattharris/tmhOAuth
+
+Doesn't worked
+https://github.com/BoyCook/TwitterJSClient
