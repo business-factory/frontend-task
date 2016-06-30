@@ -1,0 +1,873 @@
+[
+  {
+    "id": 44409004,
+    "id_str": "44409004",
+    "name": "Shakira",
+    "screen_name": "shakira",
+    "location": "Barranquilla",
+    "description": "#LaBicicleta @CarlosVives & Shakira. iTunes: https://t.co/soIQTtdbP9  https://t.co/co5eiiz8nm",
+    "url": "https://t.co/lL3bUtNcA1",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/lL3bUtNcA1",
+            "expanded_url": "http://www.shakira.com",
+            "display_url": "shakira.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/soIQTtdbP9",
+            "expanded_url": "http://smarturl.it/LaBicicleta",
+            "display_url": "smarturl.it/LaBicicleta",
+            "indices": [
+              45,
+              68
+            ]
+          },
+          {
+            "url": "https://t.co/co5eiiz8nm",
+            "expanded_url": "https://youtu.be/lzGA9ma3u9M",
+            "display_url": "youtu.be/lzGA9ma3u9M",
+            "indices": [
+              70,
+              93
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 38572797,
+    "friends_count": 180,
+    "listed_count": 102235,
+    "created_at": "Wed Jun 03 17:38:07 +0000 2009",
+    "favourites_count": 355,
+    "utc_offset": -14400,
+    "time_zone": "Eastern Time (US & Canada)",
+    "geo_enabled": false,
+    "verified": true,
+    "statuses_count": 4059,
+    "lang": "en",
+    "status": {
+      "created_at": "Wed Jun 29 23:01:04 +0000 2016",
+      "id": 748290213366095872,
+      "id_str": "748290213366095872",
+      "text": "Con mi primita Adri por el Sena! Shak https://t.co/sMh5l0iZEC",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 748290209272446979,
+            "id_str": "748290209272446979",
+            "indices": [
+              38,
+              61
+            ],
+            "media_url": "http://pbs.twimg.com/media/CmJ1-xCWQAMZzWB.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CmJ1-xCWQAMZzWB.jpg",
+            "url": "https://t.co/sMh5l0iZEC",
+            "display_url": "pic.twitter.com/sMh5l0iZEC",
+            "expanded_url": "http://twitter.com/shakira/status/748290213366095872/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 675,
+                "h": 1200,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 382,
+                "h": 680,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 750,
+                "h": 1334,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 748290209272446979,
+            "id_str": "748290209272446979",
+            "indices": [
+              38,
+              61
+            ],
+            "media_url": "http://pbs.twimg.com/media/CmJ1-xCWQAMZzWB.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CmJ1-xCWQAMZzWB.jpg",
+            "url": "https://t.co/sMh5l0iZEC",
+            "display_url": "pic.twitter.com/sMh5l0iZEC",
+            "expanded_url": "http://twitter.com/shakira/status/748290213366095872/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 675,
+                "h": 1200,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 382,
+                "h": 680,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 750,
+                "h": 1334,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 408,
+      "favorite_count": 3138,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": true,
+    "profile_background_color": "FFFFFF",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/509016736553648128/RUHaGMev.png",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/509016736553648128/RUHaGMev.png",
+    "profile_background_tile": true,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/736696089521295360/F-5cSSKf_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/736696089521295360/F-5cSSKf_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/44409004/1464355518",
+    "profile_link_color": "99033A",
+    "profile_sidebar_border_color": "000000",
+    "profile_sidebar_fill_color": "C3E2FA",
+    "profile_text_color": "080808",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false
+  },
+  {
+    "id": 23982922,
+    "id_str": "23982922",
+    "name": "Shakira",
+    "screen_name": "PortalShakira",
+    "location": "Brasil",
+    "description": "Oficial Brasil | Perfil dedicado a cantora colombiana Shakira! Facebook: https://t.co/6Bgc2qvuNK Instagram: https://t.co/jTDJ4qiKmX",
+    "url": "https://t.co/ksCZJLGPKF",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/ksCZJLGPKF",
+            "expanded_url": "http://www.portalshakira.com",
+            "display_url": "portalshakira.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/6Bgc2qvuNK",
+            "expanded_url": "http://facebook.com/PortalShakira",
+            "display_url": "facebook.com/PortalShakira",
+            "indices": [
+              73,
+              96
+            ]
+          },
+          {
+            "url": "https://t.co/jTDJ4qiKmX",
+            "expanded_url": "http://Instagram.com/portalshakira",
+            "display_url": "Instagram.com/portalshakira",
+            "indices": [
+              108,
+              131
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 253195,
+    "friends_count": 191,
+    "listed_count": 1027,
+    "created_at": "Thu Mar 12 16:59:06 +0000 2009",
+    "favourites_count": 1848,
+    "utc_offset": -10800,
+    "time_zone": "Brasilia",
+    "geo_enabled": true,
+    "verified": false,
+    "statuses_count": 13128,
+    "lang": "pt",
+    "status": {
+      "created_at": "Wed Jun 29 22:51:26 +0000 2016",
+      "id": 748287790295592960,
+      "id_str": "748287790295592960",
+      "text": "Quer ganhar um super iPod Touch de 8 GB customizado + o poderoso perfume “Magnetic Elixir by Shakira”? Saiba mais... https://t.co/M4Q4HQf0H7",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/M4Q4HQf0H7",
+            "expanded_url": "http://fb.me/2kWdaZHpy",
+            "display_url": "fb.me/2kWdaZHpy",
+            "indices": [
+              117,
+              140
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://www.facebook.com/twitter\" rel=\"nofollow\">Facebook</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 0,
+      "favorite_count": 4,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "pt"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "FDFAFF",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000169270964/gXKE6Gis.jpeg",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000169270964/gXKE6Gis.jpeg",
+    "profile_background_tile": true,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/739784761720328192/NMVW1SyI_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/739784761720328192/NMVW1SyI_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/23982922/1464382266",
+    "profile_link_color": "FF0000",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "EAE7F5",
+    "profile_text_color": "3D1957",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false
+  },
+  {
+    "id": 58842173,
+    "id_str": "58842173",
+    "name": "Shakira",
+    "screen_name": "Shakira_Brasil",
+    "location": "Rio de Janeiro",
+    "description": "Sua fonte oficial sobre a cantora Shakira no Brasil. https://t.co/GiF0NVxz6q\nhttps://t.co/mbZmL2RTOG",
+    "url": "https://t.co/rawZyiAziL",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/rawZyiAziL",
+            "expanded_url": "http://shakirabrasil.com",
+            "display_url": "shakirabrasil.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/GiF0NVxz6q",
+            "expanded_url": "http://Instagram.com/ShakiraBR",
+            "display_url": "Instagram.com/ShakiraBR",
+            "indices": [
+              53,
+              76
+            ]
+          },
+          {
+            "url": "https://t.co/mbZmL2RTOG",
+            "expanded_url": "http://Facebook.com/ShakiraBrasilOficial",
+            "display_url": "Facebook.com/ShakiraBrasilO…",
+            "indices": [
+              77,
+              100
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 188184,
+    "friends_count": 382,
+    "listed_count": 277,
+    "created_at": "Tue Jul 21 16:30:47 +0000 2009",
+    "favourites_count": 2166,
+    "utc_offset": -10800,
+    "time_zone": "America/Sao_Paulo",
+    "geo_enabled": true,
+    "verified": false,
+    "statuses_count": 25969,
+    "lang": "pt",
+    "status": {
+      "created_at": "Thu Jun 30 01:13:15 +0000 2016",
+      "id": 748323478500147200,
+      "id_str": "748323478500147200",
+      "text": "RT @SHEEZUXX: Mds o Milan que fofo  https://t.co/eE3NVY4w3Y",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "SHEEZUXX",
+            "name": "Jaqueline",
+            "id": 1037750294,
+            "id_str": "1037750294",
+            "indices": [
+              3,
+              12
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/eE3NVY4w3Y",
+            "expanded_url": "https://twitter.com/shakira_brasil/status/747956597872201728",
+            "display_url": "twitter.com/shakira_brasil…",
+            "indices": [
+              36,
+              59
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Wed Jun 29 21:32:22 +0000 2016",
+        "id": 748267893511561216,
+        "id_str": "748267893511561216",
+        "text": "Mds o Milan que fofo  https://t.co/eE3NVY4w3Y",
+        "truncated": false,
+        "entities": {
+          "hashtags": [],
+          "symbols": [],
+          "user_mentions": [],
+          "urls": [
+            {
+              "url": "https://t.co/eE3NVY4w3Y",
+              "expanded_url": "https://twitter.com/shakira_brasil/status/747956597872201728",
+              "display_url": "twitter.com/shakira_brasil…",
+              "indices": [
+                22,
+                45
+              ]
+            }
+          ]
+        },
+        "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+        "in_reply_to_status_id": null,
+        "in_reply_to_status_id_str": null,
+        "in_reply_to_user_id": null,
+        "in_reply_to_user_id_str": null,
+        "in_reply_to_screen_name": null,
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "quoted_status_id": 747956597872201728,
+        "quoted_status_id_str": "747956597872201728",
+        "is_quote_status": true,
+        "retweet_count": 1,
+        "favorite_count": 1,
+        "favorited": false,
+        "retweeted": false,
+        "possibly_sensitive": false,
+        "lang": "ht"
+      },
+      "quoted_status_id": 747956597872201728,
+      "quoted_status_id_str": "747956597872201728",
+      "is_quote_status": true,
+      "retweet_count": 1,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "ht"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "FFFFFF",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/559462891967901696/KoRTyyhY.png",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/559462891967901696/KoRTyyhY.png",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/717200035318923264/wLdo1W7p_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/717200035318923264/wLdo1W7p_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/58842173/1464410154",
+    "profile_link_color": "89C9FA",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "812D60",
+    "profile_text_color": "CDCDCD",
+    "profile_use_background_image": false,
+    "has_extended_profile": true,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false
+  },
+  {
+    "id": 25043862,
+    "id_str": "25043862",
+    "name": "Shakira Media",
+    "screen_name": "ShakiraMedia",
+    "location": "Barranquilla, Colombia",
+    "description": "Top Shakira source online since 2003 | Fuente oficial con lo más reciente de Shakira | https://t.co/7O2yGQ1h6j https://t.co/1Txl9shMUO",
+    "url": "https://t.co/rUSKYavSKl",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "https://t.co/rUSKYavSKl",
+            "expanded_url": "http://www.ShakiraMedia.com",
+            "display_url": "ShakiraMedia.com",
+            "indices": [
+              0,
+              23
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/7O2yGQ1h6j",
+            "expanded_url": "https://www.facebook.com/ShakiraMedia",
+            "display_url": "facebook.com/ShakiraMedia",
+            "indices": [
+              87,
+              110
+            ]
+          },
+          {
+            "url": "https://t.co/1Txl9shMUO",
+            "expanded_url": "https://instagram.com/ShakiraMedia/",
+            "display_url": "instagram.com/ShakiraMedia/",
+            "indices": [
+              111,
+              134
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 333083,
+    "friends_count": 82,
+    "listed_count": 1643,
+    "created_at": "Wed Mar 18 07:53:47 +0000 2009",
+    "favourites_count": 5879,
+    "utc_offset": -25200,
+    "time_zone": "Pacific Time (US & Canada)",
+    "geo_enabled": true,
+    "verified": false,
+    "statuses_count": 6157,
+    "lang": "en",
+    "status": {
+      "created_at": "Mon Jun 27 19:51:40 +0000 2016",
+      "id": 747517774361202692,
+      "id_str": "747517774361202692",
+      "text": "#LaBicicleta No.1 por 3ra semana en el National Report de Colombia y #1 en iTunes desde su lanzamiento hace un mes. https://t.co/7XPr0rU4tM",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "LaBicicleta",
+            "indices": [
+              0,
+              12
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 747517763967651840,
+            "id_str": "747517763967651840",
+            "indices": [
+              116,
+              139
+            ],
+            "media_url": "http://pbs.twimg.com/media/Cl-3ciCWEAA-0mH.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/Cl-3ciCWEAA-0mH.jpg",
+            "url": "https://t.co/7XPr0rU4tM",
+            "display_url": "pic.twitter.com/7XPr0rU4tM",
+            "expanded_url": "http://twitter.com/ShakiraMedia/status/747517774361202692/photo/1",
+            "type": "photo",
+            "sizes": {
+              "small": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 747517763967651840,
+            "id_str": "747517763967651840",
+            "indices": [
+              116,
+              139
+            ],
+            "media_url": "http://pbs.twimg.com/media/Cl-3ciCWEAA-0mH.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/Cl-3ciCWEAA-0mH.jpg",
+            "url": "https://t.co/7XPr0rU4tM",
+            "display_url": "pic.twitter.com/7XPr0rU4tM",
+            "expanded_url": "http://twitter.com/ShakiraMedia/status/747517774361202692/photo/1",
+            "type": "photo",
+            "sizes": {
+              "small": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 605,
+                "h": 640,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 56,
+      "favorite_count": 94,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "FFFFFF",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/459538406515548160/U6l6LrUu.png",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/459538406515548160/U6l6LrUu.png",
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/724638741734776832/B6rFfy_f_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/724638741734776832/B6rFfy_f_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/25043862/1447793165",
+    "profile_link_color": "ABB8C2",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "EFEFEF",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false
+  },
+  {
+    "id": 279332236,
+    "id_str": "279332236",
+    "name": "Pies Descalzos BR",
+    "screen_name": "ShakiraPDBrasil",
+    "location": "Brasil           ",
+    "description": "Fã clube brasileiro dedicado a cantora Shakira /Facebook: https://t.co/aANgo79iNh Instagram: Shakirapdbrasil Contato: shakirapdbrasil@hotmail.com/",
+    "url": "http://t.co/CVOHVI3JIf",
+    "entities": {
+      "url": {
+        "urls": [
+          {
+            "url": "http://t.co/CVOHVI3JIf",
+            "expanded_url": "http://www.shakirapiesdescalzosbrasil.com/",
+            "display_url": "shakirapiesdescalzosbrasil.com",
+            "indices": [
+              0,
+              22
+            ]
+          }
+        ]
+      },
+      "description": {
+        "urls": [
+          {
+            "url": "https://t.co/aANgo79iNh",
+            "expanded_url": "http://facebook.com/shakiraPDBrasil",
+            "display_url": "facebook.com/shakiraPDBrasil",
+            "indices": [
+              58,
+              81
+            ]
+          }
+        ]
+      }
+    },
+    "protected": false,
+    "followers_count": 68974,
+    "friends_count": 250,
+    "listed_count": 138,
+    "created_at": "Sat Apr 09 02:12:10 +0000 2011",
+    "favourites_count": 353,
+    "utc_offset": -10800,
+    "time_zone": "Brasilia",
+    "geo_enabled": false,
+    "verified": false,
+    "statuses_count": 5825,
+    "lang": "pt",
+    "status": {
+      "created_at": "Sun Jun 12 18:24:10 +0000 2016",
+      "id": 742059935878512641,
+      "id_str": "742059935878512641",
+      "text": "RT @WorldShakifans: @TeenChoiceFOX @shakira my #ChoiceMovieTVSong Try Everything 😍",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "ChoiceMovieTVSong",
+            "indices": [
+              47,
+              65
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "WorldShakifans",
+            "name": "Shakira",
+            "id": 548671597,
+            "id_str": "548671597",
+            "indices": [
+              3,
+              18
+            ]
+          },
+          {
+            "screen_name": "TeenChoiceFOX",
+            "name": "Teen Choice Awards",
+            "id": 45609049,
+            "id_str": "45609049",
+            "indices": [
+              20,
+              34
+            ]
+          },
+          {
+            "screen_name": "shakira",
+            "name": "Shakira",
+            "id": 44409004,
+            "id_str": "44409004",
+            "indices": [
+              35,
+              43
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "retweeted_status": {
+        "created_at": "Sun Jun 12 16:29:07 +0000 2016",
+        "id": 742030982925156353,
+        "id_str": "742030982925156353",
+        "text": "@TeenChoiceFOX @shakira my #ChoiceMovieTVSong Try Everything 😍",
+        "truncated": false,
+        "entities": {
+          "hashtags": [
+            {
+              "text": "ChoiceMovieTVSong",
+              "indices": [
+                27,
+                45
+              ]
+            }
+          ],
+          "symbols": [],
+          "user_mentions": [
+            {
+              "screen_name": "TeenChoiceFOX",
+              "name": "Teen Choice Awards",
+              "id": 45609049,
+              "id_str": "45609049",
+              "indices": [
+                0,
+                14
+              ]
+            },
+            {
+              "screen_name": "shakira",
+              "name": "Shakira",
+              "id": 44409004,
+              "id_str": "44409004",
+              "indices": [
+                15,
+                23
+              ]
+            }
+          ],
+          "urls": []
+        },
+        "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+        "in_reply_to_status_id": 741676894526050305,
+        "in_reply_to_status_id_str": "741676894526050305",
+        "in_reply_to_user_id": 45609049,
+        "in_reply_to_user_id_str": "45609049",
+        "in_reply_to_screen_name": "TeenChoiceFOX",
+        "geo": null,
+        "coordinates": null,
+        "place": null,
+        "contributors": null,
+        "is_quote_status": false,
+        "retweet_count": 6,
+        "favorite_count": 3,
+        "favorited": false,
+        "retweeted": false,
+        "lang": "en"
+      },
+      "is_quote_status": false,
+      "retweet_count": 6,
+      "favorite_count": 0,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "en"
+    },
+    "contributors_enabled": false,
+    "is_translator": false,
+    "is_translation_enabled": false,
+    "profile_background_color": "000000",
+    "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000028039533/6b73a612cd5b419c36613eac03038052.jpeg",
+    "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000028039533/6b73a612cd5b419c36613eac03038052.jpeg",
+    "profile_background_tile": true,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/636319972281585664/RekUQlrv_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/636319972281585664/RekUQlrv_normal.jpg",
+    "profile_banner_url": "https://pbs.twimg.com/profile_banners/279332236/1440546373",
+    "profile_link_color": "3903ED",
+    "profile_sidebar_border_color": "FFFFFF",
+    "profile_sidebar_fill_color": "000000",
+    "profile_text_color": "000000",
+    "profile_use_background_image": true,
+    "has_extended_profile": false,
+    "default_profile": false,
+    "default_profile_image": false,
+    "following": false,
+    "follow_request_sent": false,
+    "notifications": false
+  }
+]

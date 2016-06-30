@@ -14,18 +14,26 @@ class TweetList extends Component {
     }
 
     return (
-      <table className='tweet-list table'>
+      <table className='tweet-list table table-striped'>
         <thead>
           <tr>
-            <th>th</th>
+            <th>Tweet</th>
+            <th>Date</th>
+            <th>Favorites</th>
+            <th>Retweets</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>
-              td
-            </td>
-          </tr>
+          {this.props.tweets.map(function mappingTweets(tweet, i) {
+            return (
+              <tr key={i}>
+                <td>{tweet.text}</td>
+                <td className='text-center'>{new Date (tweet.created_at).toLocaleDateString()}</td>
+                <td className='text-center'>{tweet.favorite_count}</td>
+                <td className='text-center'>{tweet.retweet_count}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     )

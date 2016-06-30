@@ -60,12 +60,11 @@ body{
   display: flex
 }
 .app-panel > div:nth-child(1) {
-  flex: 1 0 auto; 
   max-width: 200px;
   margin-right: 20px
 }
 .app-panel > div:nth-child(2) {
-  flex: 7 0 auto;
+	flex-grow: 1;
 }
 
 /*component: selected-user-detail*/
@@ -106,6 +105,10 @@ body{
 /*resets*/
 ul,li,figure{padding:0;margin:0}
 li{list-style:none}
+.table th, .table td {
+  padding: 0.45rem;
+  font-size: 0.8rem
+}
 
 /*helpers*/
 .pos-relative{
@@ -113,4 +116,7 @@ li{list-style:none}
 }
 .opacity-5 {
   opacity: .5
+}
+.text-center{
+  text-align: center
 }
