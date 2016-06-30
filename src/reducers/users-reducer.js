@@ -1,4 +1,5 @@
 import { FETCH_USERS_ACTION } from '../actions/index'
+
 const INITIAL_STATE = []
 
 export default function usersReducerDefinition (state = INITIAL_STATE, action) {

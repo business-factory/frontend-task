@@ -2,28 +2,35 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 class TweetList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
-      componentList: null,
+      componentList: [],
       orderBy: 'created_at'
     }
 
     this.reorderListByColumn = this.reorderListByColumn.bind(this)
   }
 
-  _linkify(text) {
+  componentWillReceiveProps (nextProps) {
+    // You don't have to do this check first, but it can help prevent an unneeded render
+    if (nextProps.tweets !== this.state.componentList) {
+      this.setState({ componentList: nextProps.tweets })
+    }
+  }
+
+  _linkify (text) {
     var urlRegex = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig
     return text.replace(urlRegex, function (url) {
       return '<a href="' + url + '">' + url + '</a>'
     })
   }
 
-  _sortListByColumn(list, column, orderDirection) {
+  _sortListByColumn (list, column, orderDirection) {
     var outputList
 
-    function makeSortable(data) {
+    function makeSortable (data) {
       if (typeof data === 'string' && !isNaN(new Date(data).getTime())) {
         return new Date(data).getTime()
       } else if (typeof data === 'string') {
@@ -38,7 +45,7 @@ class TweetList extends Component {
     // new Date('a').toString()
     // new Date("Wed Jun 29 23:01:04 +0000 2016").getTime()
 
-    outputList = list.sort(function sort(a, b) {
+    outputList = list.sort(function sort (a, b) {
       if (makeSortable(a[column]) > makeSortable(b[column])) {
         return 1
       } else if (makeSortable(b[column]) > makeSortable(a[column])) {
@@ -54,7 +61,7 @@ class TweetList extends Component {
     return outputList
   }
 
-  _findClosestParentElement(el, tag) {
+  _findClosestParentElement (el, tag) {
     while (el.parentNode) {
       if (String(el.tagName).toLowerCase() === tag) {
         return el
@@ -65,11 +72,9 @@ class TweetList extends Component {
     return null
   }
 
-  _resetOrderDirectionStatus () {
-    
-  }
+  _resetOrderDirectionStatus () {}
 
-  reorderListByColumn(event) {
+  reorderListByColumn (event) {
     var thElement = this._findClosestParentElement(event.target, 'th')
     const column = thElement.dataset['field']
     const oldOrderDirection = thElement.dataset['orderDirection']
@@ -85,49 +90,65 @@ class TweetList extends Component {
     thElement.querySelector('.caret').classList.add(newOrderDirection)
   }
 
-  render() {
-    const internalList = this.state.componentList || this.props.tweets
-
-    if (!internalList.length) {
+  render () {
+    if (!this.state.componentList.length) {
       return false
     }
 
     return (
-      <table className='tweet-list table table-striped'>
-        <thead>
-          <tr>
-            <th onClick={this.reorderListByColumn} data-field='text' data-order-direction='asc'>
-              <span>Tweet</span><span className={'caret asc' + (this.state.orderBy != 'text' ? ' hidden' : '') }></span>
-            </th>
-            <th onClick={this.reorderListByColumn} data-field='favorite_count' data-order-direction='asc' className='text-center'>
-              <span>Favorites</span><span className={'caret asc' + (this.state.orderBy != 'favorite_count' ? ' hidden' : '') }></span>
-            </th>
-            <th onClick={this.reorderListByColumn} data-field='retweet_count' data-order-direction='asc' className='text-center'>
-              <span>Retweets</span><span className={'caret asc' + (this.state.orderBy != 'retweet_count' ? ' hidden' : '') }></span>
-            </th>
-            <th onClick={this.reorderListByColumn} data-field='created_at' data-order-direction='desc' className='text-center'>
-              <span>Date</span><span className={'caret asc' + (this.state.orderBy != 'created_at' ? ' hidden' : '') }></span>
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          {internalList.map(function mappingTweets(tweet, i) {
-            return (
-              <tr key={i}>
-                <td dangerouslySetInnerHTML={{ __html: this._linkify(tweet.text) }}></td>
-                <td className='text-center'>{parseInt(tweet.favorite_count).toLocaleString() }</td>
-                <td className='text-center'>{parseInt(tweet.retweet_count).toLocaleString() }</td>
-                <td className='text-center'>{new Date(tweet.created_at).toLocaleDateString() }</td>
-              </tr>
-            )
-          }, this) }
-        </tbody>
-      </table>
+    <table className='tweet-list table table-striped'>
+      <thead>
+        <tr>
+          <th onClick={this.reorderListByColumn} data-field='text' data-order-direction='asc'>
+            <span>Tweet</span><span className={'caret asc' + (this.state.orderBy != 'text' ? ' hidden' : '')}></span>
+          </th>
+          <th
+            onClick={this.reorderListByColumn}
+            data-field='favorite_count'
+            data-order-direction='asc'
+            className='text-center'>
+            <span>Favorites</span><span className={'caret asc' + (this.state.orderBy != 'favorite_count' ? ' hidden' : '')}></span>
+          </th>
+          <th
+            onClick={this.reorderListByColumn}
+            data-field='retweet_count'
+            data-order-direction='asc'
+            className='text-center'>
+            <span>Retweets</span><span className={'caret asc' + (this.state.orderBy != 'retweet_count' ? ' hidden' : '')}></span>
+          </th>
+          <th
+            onClick={this.reorderListByColumn}
+            data-field='created_at'
+            data-order-direction='desc'
+            className='text-center'>
+            <span>Date</span><span className={'caret asc' + (this.state.orderBy != 'created_at' ? ' hidden' : '')}></span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {this.state.componentList.map(function mappingTweets (tweet, i) {
+           return (
+           <tr key={i}>
+             <td dangerouslySetInnerHTML={{ __html: this._linkify(tweet.text) }}></td>
+             <td className='text-center'>
+               {parseInt(tweet.favorite_count).toLocaleString()}
+             </td>
+             <td className='text-center'>
+               {parseInt(tweet.retweet_count).toLocaleString()}
+             </td>
+             <td className='text-center'>
+               {new Date(tweet.created_at).toLocaleDateString()}
+             </td>
+           </tr>
+           )
+         }, this)}
+      </tbody>
+    </table>
     )
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return { tweets: state.tweets }
 }
 

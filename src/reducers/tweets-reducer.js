@@ -1,4 +1,5 @@
 import { FETCH_TWEETS_ACTION, SELECT_USER_ACTION } from '../actions/index'
+
 const INITIAL_STATE = []
 
 export default function tweetsReducerDefinition (state = INITIAL_STATE, action) {

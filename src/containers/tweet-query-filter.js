@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { Button } from 'react-bootstrap'
+import FilterForm from './filter-form'
+import FilterItem from './filter-item'
 
 class TweetQueryFilter extends Component {
   constructor(props) {
@@ -19,26 +19,36 @@ class TweetQueryFilter extends Component {
     const tweets = this.props.tweets
     const isLoading = this.props.loading_status
 
-    if (!tweets.length) {
-      return (
-        <div className='text-xs-center cover-content'>
-          <h3>{isLoading ? 'Loading' : 'Choose a user to see its tweets'}</h3>
-        </div>
-      )
-    }
+    // if (!tweets.length) {
+    //   return (
+    //     <div className='text-xs-center cover-content'>
+    //       <h3>{isLoading ? 'Loading...' : 'Choose a user to see its tweets'}</h3>
+    //     </div>
+    //   )
+    // }
 
     return (
-      <form className='tweet-query-filter' onSubmit={this.onFormSubmit}>
-        <Button type='submit' bsStyle="link">Filter tweets</Button>
-      </form>
+      <div className="tweet-query-filter p-a-0">
+        <div className="tweet-query-filter-header">
+          <small>* Use these rules to filter tweets</small>
+          <FilterForm />
+        </div>
+        <div className="tweet-query-filter-body">
+          {this.props.filters.map(function renderingKeys (filtr, i) {
+            return (<FilterItem filter={filtr}/>)
+          }, this)}
+        </div>        
+        <div className="tweet-query-filter-footer">
+          <button type="button" className="btn btn-sm btn-primary">Filter Tweets</button>
+        </div>
+      </div>
     )
   }
 }
 
 function mapStateToProps(state) {
   return {
-    tweets: state.tweets,
-    loading_status: state.loading_status
+    filters: state.filters
   }
 }
 
