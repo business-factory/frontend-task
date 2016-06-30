@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import RoiHunterLogo from '../components/roi-hunter-logo'
 import SearchBar from '../containers/search-bar'
-import SelectedUserDetail from '../containers/selected-user-detail'
-// <SelectedUserDetail />
+import AppPanel from '../containers/app-panel'
+
 export default class App extends Component {
   render () {
     return (
@@ -12,7 +12,7 @@ export default class App extends Component {
           <SearchBar />
         </div>
         <div className='body-content'>
-          <SelectedUserDetail />
+          <AppPanel />
         </div>
       </div>
     )

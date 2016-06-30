@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { selectUserDispach } from '../actions/index'
+import { selectUserAction } from '../actions/index'
 
 class SearchResultListItem extends Component {
   render () {
     const user = this.props.user
     return (
-    <li key={user.name} onClick={ () => this.props.selectUserDispach(this.props.user) }>
+    <li key={user.name} onClick={ () => this.props.selectUserAction(this.props.user) }>
       <figure>
         <img src={user.profile_image_url} alt={user.name} />
       </figure>
@@ -19,7 +19,7 @@ class SearchResultListItem extends Component {
 }
 
 function mapDispatchToProps (dispatch) {
-  return bindActionCreators({ selectUserDispach}, dispatch)
+  return bindActionCreators({ selectUserAction}, dispatch)
 }
 
 export default connect(null, mapDispatchToProps)(SearchResultListItem)

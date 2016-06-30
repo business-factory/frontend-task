@@ -1,5 +1,7 @@
 body{
-  background-color: #f5f8fa
+  background-color: #f5f8fa;
+  color: #313854;
+  font-family: Arial, sans-serif
 }
 .app-container{
   padding-top: 20px
@@ -8,6 +10,7 @@ body{
 .header-content{
   display: flex;
   align-items: center;
+  margin-bottom: 20px
 }
 .header-content > *{
   flex-grow: 1
@@ -16,9 +19,7 @@ body{
 	margin-bottom: 0
 }
 
-/*body-content*/
-/*.body-content{}*/
-
+/*component: search-result-list*/
 .open > .search-result-list{
   display: block
 }
@@ -53,6 +54,54 @@ body{
 .search-result-list li > *:last-child{
   margin-right: 0
 }
+
+/*component: app-panel*/
+.app-panel {
+  display: flex
+}
+.app-panel > div:nth-child(1) {
+  flex: 1 0 auto; 
+  max-width: 200px;
+  margin-right: 20px
+}
+.app-panel > div:nth-child(2) {
+  flex: 7 0 auto;
+}
+
+/*component: selected-user-detail*/
+.tweet-list,
+.tweet-query-filter,
+.selected-user-detail {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid rgba(0, 0, 0, .08);
+  border-radius: 8px;
+}
+.selected-user-detail figure {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  border: 5px solid #fff;
+  margin-bottom: 20px
+}
+.selected-user-detail img {
+  width: 100%;
+  max-width: 162px
+}
+
+/*tweet-query-filter*/
+.tweet-query-filter {
+  margin-bottom: 20px
+}
+
+.cover-content {
+  min-height: 400px;
+  padding: 40px;
+  background: url('../svg/twitter-logo.svg') no-repeat center center;
+  background-size: 20%
+}
+
+/*tweet-list*/
 
 /*resets*/
 ul,li,figure{padding:0;margin:0}

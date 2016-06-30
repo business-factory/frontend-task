@@ -3,11 +3,11 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { FormGroup, FormControl } from 'react-bootstrap'
 
-import { fetchUsersDispach } from '../actions/index'
+import { fetchUsersAction } from '../actions/index'
 import SearchResultList from './search-result-list'
 
 class SearchBar extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -15,55 +15,71 @@ class SearchBar extends Component {
       showList: true
     }
 
-    // Hard binding / overhide functions
+    // Hard binding
     this.onInputChange = this.onInputChange.bind(this)
-    this.toggleVisibility = this.toggleVisibility.bind(this)
+    this.onInputFocus = this.onInputFocus.bind(this)
     this.onFormSubmit = this.onFormSubmit.bind(this)
+    this.onDocumentClick = this.onDocumentClick.bind(this)
+  }
+  // Lifecycle events
+  componentWillMount () {
+    document.addEventListener('click', this.onDocumentClick , false)
+  }
+  
+  componentWillUnmount  () {
+    document.removeEventListener('click', this.onDocumentClick , false)
   }
 
-  onInputChange (event) {
+  onDocumentClick (event) {
+    if (String(event.target.tagName).toLowerCase() === 'input' && event.target.id === 'search-query') {
+      return
+    }
+    
+    this.setState({ showList: false })
+  }
+
+  onInputChange(event) {
     this.setState({ value: event.target.value })
   }
 
-  toggleVisibility (event) {
-    // this.setState({showList: !this.state.showList })
+  onInputFocus(event) {
+    this.setState({ showList: true })
   }
 
-  onFormSubmit (event) {
+  onFormSubmit(event) {
     event.preventDefault()
 
-    this.props.fetchUsersDispach(this.state.value)
+    this.props.fetchUsersAction(this.state.value)
     this.setState({
       value: '',
       showList: true
     })
   }
 
-  render () {
+  render() {
     return (
-    <div className={'pos-relative' + (this.state.showList ? ' open' : '')}>
-      <form onSubmit={this.onFormSubmit}>
-        <FormGroup controlId='search-query'>
-          <FormControl
-            type='text'
-            placeholder='Search Twitter'
-            value={this.state.value}
-            onChange={this.onInputChange}
-            onBlur={this.toggleVisibility}
-            onFocus={this.toggleVisibility} />
-          <FormControl.Feedback />
-        </FormGroup>
-      </form>
-      <SearchResultList />
-    </div>
+      <div className={'pos-relative' + (this.state.showList ? ' open' : '') }>
+        <form onSubmit={this.onFormSubmit}>
+          <FormGroup controlId='search-query'>
+            <FormControl
+              type='text'
+              placeholder='Search for users on Twitter'
+              value={this.state.value}
+              onChange={this.onInputChange}
+              onFocus={this.onInputFocus} />
+            <FormControl.Feedback />
+          </FormGroup>
+        </form>
+        <SearchResultList />
+      </div>
     )
   }
 }
 
-// Injecting fetchUsersDispach() into SearchBar
-function mapDispatchToProps (dispatch) {
+// Injecting fetchUsersAction() into SearchBar
+function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    fetchUsersDispach: fetchUsersDispach
+    fetchUsersAction: fetchUsersAction
   }, dispatch)
 }
 
