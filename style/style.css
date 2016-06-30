@@ -56,16 +56,8 @@ body{
 }
 
 /*component: app-panel*/
-.app-panel {
-  display: flex
-}
-.app-panel > div:nth-child(1) {
-  max-width: 200px;
-  margin-right: 20px
-}
-.app-panel > div:nth-child(2) {
-	flex-grow: 1;
-}
+/*.app-panel {
+}*/
 
 /*component: selected-user-detail*/
 .tweet-list,
@@ -76,12 +68,21 @@ body{
   border: 1px solid rgba(0, 0, 0, .08);
   border-radius: 8px;
 }
+.selected-user-detail {
+  display: flex;
+  align-items: center;
+  font-size: .88rem;
+  margin-bottom: 20px
+}
+.selected-user-detail .highlight-field {
+    font-size: 1.3rem;
+}
 .selected-user-detail figure {
   overflow: hidden;
   border-radius: 12px;
   background: #fff;
-  border: 5px solid #fff;
-  margin-bottom: 20px
+  border: 5px solid rgba(0, 0, 0, .08);;
+  margin-right: 20px
 }
 .selected-user-detail img {
   width: 100%;
