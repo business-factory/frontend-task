@@ -56,8 +56,7 @@ body{
 }
 
 /*component: app-panel*/
-/*.app-panel {
-}*/
+/*.app-panel {}*/
 
 /*component: selected-user-detail*/
 .tweet-list,
@@ -91,7 +90,8 @@ body{
 
 /*tweet-query-filter*/
 .tweet-query-filter {
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  text-align: right
 }
 
 .cover-content {
@@ -102,6 +102,26 @@ body{
 }
 
 /*tweet-list*/
+.tweet-list thead tr th {
+  cursor: pointer
+}
+.tweet-list thead tr th .caret{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin-left: 4px
+}
+.tweet-list thead tr th .caret.asc{
+  margin-top: 6px;
+  border-width: 0 3px 3px 3px;
+  border-color: transparent transparent #000000 transparent;
+}
+.tweet-list thead tr th .caret.desc{
+  margin-top: 7px;
+  border-width: 3px 3px 0 3px;
+  border-color: #000000 transparent transparent transparent;
+}
 
 /*resets*/
 ul,li,figure{padding:0;margin:0}
@@ -120,4 +140,7 @@ li{list-style:none}
 }
 .text-center{
   text-align: center
+}
+.hidden {
+  visibility: hidden
 }

@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchTweetsAction } from '../actions/index'
 import { Button } from 'react-bootstrap'
 
 class TweetQueryFilter extends Component {
@@ -14,33 +13,30 @@ class TweetQueryFilter extends Component {
 
   onFormSubmit(event) {
     event.preventDefault()
-
-    this.props.fetchTweetsAction(this.props.user.id)
+    // this.props.fetchTweetsAction(this.props.user.id)
   }
 
   render() {
-    const user = this.props.user
-
-    if (!user) {
+    const tweets = this.props.tweets
+    
+    if (!tweets.length) {
       return (
         <div className='text-xs-center cover-content'>
-          <h3>Lorem Ipsum is not simply random text</h3>
+          <h3>Choose a user to see its tweets</h3>
         </div>
       )
     }
 
     return (
       <form className='tweet-query-filter' onSubmit={this.onFormSubmit}>
-        <Button type='submit'>Get tweets</Button>
+        <Button type='submit' bsStyle="link">Filter tweets</Button>
       </form>
     )
   }
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({
-    fetchTweetsAction: fetchTweetsAction
-  }, dispatch)
+function mapStateToProps(state) {
+  return { tweets: state.tweets }
 }
 
-export default connect(null, mapDispatchToProps)(TweetQueryFilter)
+export default connect(mapStateToProps)(TweetQueryFilter)
