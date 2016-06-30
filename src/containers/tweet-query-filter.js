@@ -7,7 +7,6 @@ class TweetQueryFilter extends Component {
   constructor(props) {
     super(props)
 
-    // this.state = {}
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
@@ -18,11 +17,12 @@ class TweetQueryFilter extends Component {
 
   render() {
     const tweets = this.props.tweets
-    
+    const isLoading = this.props.loading_status
+
     if (!tweets.length) {
       return (
         <div className='text-xs-center cover-content'>
-          <h3>Choose a user to see its tweets</h3>
+          <h3>{isLoading ? 'Loading' : 'Choose a user to see its tweets'}</h3>
         </div>
       )
     }
@@ -36,7 +36,10 @@ class TweetQueryFilter extends Component {
 }
 
 function mapStateToProps(state) {
-  return { tweets: state.tweets }
+  return {
+    tweets: state.tweets,
+    loading_status: state.loading_status
+  }
 }
 
 export default connect(mapStateToProps)(TweetQueryFilter)

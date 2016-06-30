@@ -1,6 +1,7 @@
 import { FETCH_USERS_ACTION } from '../actions/index'
+const INITIAL_STATE = []
 
-export default function usersReducerDefinition (state = [], action) {
+export default function usersReducerDefinition (state = INITIAL_STATE, action) {
   switch (action.type) {
     case FETCH_USERS_ACTION:
       return action.payload

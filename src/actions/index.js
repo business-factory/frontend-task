@@ -13,12 +13,13 @@ codeBird.setToken("370190091-1WuJEBfGciKwKn3bg0ygWmNa0VhDUF2XiR5nYeQK", "fIPVh2R
 export const FETCH_TWEETS_ACTION = 'FETCH_TWEETS'
 export const FETCH_USERS_ACTION = 'FETCH_USERS'
 export const SELECT_USER_ACTION = 'SELECT_USER'
+export const SHOW_LOADING_ACTION = 'SHOW_LOADING'
 
 // Actions
 
 export function fetchUsersAction(q, count = 5) {
   const request = new Promise(function promiseDefinition(resolve, reject) {
-    codeBird.__call("users_search", `q=${q}&count=${count}`,
+    codeBird.__call("users_search", `q=${window.encodeURIComponent(q)}&count=${count}`,
       function promiseDefinitionSuccess(reply, rate_limit_status) {
         resolve(reply)
       }
@@ -50,5 +51,13 @@ export function selectUserAction(user) {
   return {
     type: SELECT_USER_ACTION,
     payload: user
+  }
+}
+
+// Inner actions
+export function showLoadingStatus () {
+  return {
+    type: SHOW_LOADING_ACTION,
+    payload: true
   }
 }

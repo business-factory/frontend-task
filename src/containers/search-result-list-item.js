@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { selectUserAction, fetchTweetsAction } from '../actions/index'
+import { selectUserAction, fetchTweetsAction, showLoadingStatus } from '../actions/index'
 
 class SearchResultListItem extends Component {
   render () {
     const user = this.props.user
     return (
     <li key={user.name} onClick={ () => {
+      this.props.showLoadingStatus()
       this.props.selectUserAction(this.props.user)
       this.props.fetchTweetsAction(this.props.user.id)
     } }>
@@ -24,7 +25,8 @@ class SearchResultListItem extends Component {
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
     selectUserAction: selectUserAction,
-    fetchTweetsAction: fetchTweetsAction
+    fetchTweetsAction: fetchTweetsAction,
+    showLoadingStatus: showLoadingStatus
   }, dispatch)
 }
 

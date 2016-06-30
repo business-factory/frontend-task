@@ -1,7 +1,8 @@
+import _ from 'lodash'
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchUsersAction } from '../actions/index'
+import { fetchUsersAction, showLoadingStatus } from '../actions/index'
 import { FormGroup, FormControl } from 'react-bootstrap'
 import SearchResultList from './search-result-list'
 
@@ -19,6 +20,7 @@ class SearchBar extends Component {
     this.onInputFocus = this.onInputFocus.bind(this)
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onDocumentClick = this.onDocumentClick.bind(this)
+    this.callFetchUsersAction = _.debounce(this.callFetchUsersAction, 500)
   }
   // Lifecycle events
   componentWillMount() {
@@ -27,6 +29,11 @@ class SearchBar extends Component {
 
   componentWillUnmount() {
     document.removeEventListener('click', this.onDocumentClick, false)
+  }
+
+  callFetchUsersAction(query) {
+    this.props.showLoadingStatus()
+    this.props.fetchUsersAction(query)
   }
 
   onDocumentClick(event) {
@@ -39,6 +46,7 @@ class SearchBar extends Component {
 
   onInputChange(event) {
     this.setState({ value: event.target.value })
+    this.callFetchUsersAction(this.state.value)
   }
 
   onInputFocus(event) {
@@ -48,7 +56,7 @@ class SearchBar extends Component {
   onFormSubmit(event) {
     event.preventDefault()
 
-    this.props.fetchUsersAction(this.state.value)
+    this.callFetchUsersAction(this.state.value)
     this.setState({
       value: '',
       showList: true
@@ -77,7 +85,8 @@ class SearchBar extends Component {
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    fetchUsersAction: fetchUsersAction
+    fetchUsersAction: fetchUsersAction,
+    showLoadingStatus: showLoadingStatus
   }, dispatch)
 }
 
