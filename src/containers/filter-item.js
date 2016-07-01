@@ -28,21 +28,27 @@ class FilterItem extends Component {
     this.props.removeFilterAction(this.props.filter)
   }
 
-  getDictionary (id) {
-    return this.dictionary[id]
+  getLabel (prop) {
+    return this.dictionary[prop]
+  }
+
+  formatValue (prop, value) {
+    if (prop == 'created_at') {
+      return new Date(value).toDateString()
+    }
+    
+    return value
   }
 
   render () {
     return (
     <div className="filter-item">
-      <button type="button" 
-        className="btn btn-sm btn-secondary"
-        onClick={this.onRemoveButtonClick}>
+      <button type="button" className="btn btn-sm btn-secondary" onClick={this.onRemoveButtonClick}>
         Remove
       </button>
-      <span>{this.getDictionary(this.props.filter.key)}</span>
-      <strong>{this.getDictionary(this.props.filter.comparator)}</strong>
-      <span>{this.props.filter.value}</span>
+      <span>{this.getLabel(this.props.filter.key)}</span>
+      <strong>{this.getLabel(this.props.filter.comparator)}</strong>
+      <span>{this.formatValue(this.props.filter.key, this.props.filter.value)}</span>
     </div>
     )
   }

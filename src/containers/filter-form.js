@@ -8,7 +8,7 @@ class FilterForm extends Component {
     super(props)
 
     this.keyFullList = [
-      {id: 'created_at', name: 'Date', comparators: ['eq', 'neq', 'gt', 'lt']},
+      {id: 'created_at', name: 'Date', comparators: ['gt', 'lt']},
       {id: 'text', name: 'Tweet', comparators: ['i_contains', 'i_not_contains']},
       {id: 'favorite_count', name: 'Number of likes', comparators: ['eq', 'neq', 'gt', 'lt']},
       {id: 'entities.user_mentions', name: 'Number of mentions', comparators: ['eq', 'neq', 'gt', 'lt']},
@@ -37,10 +37,18 @@ class FilterForm extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this)
   }
 
+  // Lifecycle 
+  componentDidMount () {
+    var event = new Event('change', { bubbles: true })
+    document.querySelector('.execute-change-onmount').dispatchEvent(event)
+  }
+
   onKeySelectorChange (event) {
     const key = event.target.value
-    const validComparators = this.keyFullList.find((item) => {return item.id === key}).comparators
-    const filteredList = this.comparatorFullList.filter((item) => {return validComparators.indexOf(item.id) !== -1})
+    const validComparators = this.keyFullList.find((item) => {
+      return item.id === key}).comparators
+    const filteredList = this.comparatorFullList.filter((item) => {
+      return validComparators.indexOf(item.id) !== -1})
 
     this.setState({key: key})
     this.setState({comparatorList: filteredList})
@@ -57,45 +65,46 @@ class FilterForm extends Component {
 
   onFormSubmit (event) {
     event.preventDefault()
-    
+
     this.props.addFilterAction({
       key: this.state.key,
       comparator: this.state.comparator,
       value: this.state.value,
       timestamp: new Date().getTime()
     })
-    
+
     this.setState({ value: '' })
   }
 
-  render() {
+  render () {
     return (
-      <form 
-        className="filter-form form-inline"
-        onSubmit={this.onFormSubmit}>
-        <div className="form-group">
-          <select 
-            className="form-control"
-            value={this.state.key} 
-            onChange={this.onKeySelectorChange}>
-            {this.keyFullList.map(function renderingKeys (key, i) {
-              return (<option key={i} value={key.id}>{key.name}</option>)
-            }, this)}
-          </select>
-          <select className="form-control"
-            value={this.state.comparator}
-            onChange={this.onComparatorSelectorChange}>
-            {this.state.comparatorList.map(function renderingComparators (comparator, i) {
-              return (<option key={i} value={comparator.id}>{comparator.name}</option>)
-            }, this)}
-          </select>
-          <input type="text" required 
-            className="form-control"
-            value={this.state.value}
-            onChange={this.onInputChange} />
-        </div>
-        <button type="submit" className="btn btn-sm btn-secondary">Confirm</button>
-      </form>
+    <form className="filter-form form-inline" onSubmit={this.onFormSubmit}>
+      <div className="form-group">
+        <select className="form-control execute-change-onmount" value={this.state.key} onChange={this.onKeySelectorChange}>
+          {this.keyFullList.map(function renderingKeys (key, i) {
+             return (<option key={i} value={key.id}>
+                       {key.name}
+                     </option>)
+           }, this)}
+        </select>
+        <select className="form-control" value={this.state.comparator} onChange={this.onComparatorSelectorChange}>
+          {this.state.comparatorList.map(function renderingComparators (comparator, i) {
+             return (<option key={i} value={comparator.id}>
+                       {comparator.name}
+                     </option>)
+           }, this)}
+        </select>
+        <input
+          type="text"
+          required
+          className="form-control"
+          value={this.state.value}
+          onChange={this.onInputChange} />
+      </div>
+      <button type="submit" className="btn btn-sm btn-secondary">
+        Confirm
+      </button>
+    </form>
     )
   }
 }

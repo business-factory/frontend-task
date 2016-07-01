@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
+// import moment from 'moment'
 import { applyFilterAction, fetchTweetsAction } from '../actions/index'
 import FilterForm from './filter-form'
 import FilterItem from './filter-item'
@@ -95,8 +96,6 @@ class TweetQueryFilter extends Component {
   }
 
   onFilterTweetsButtonClick (event) {
-    const tweetList = this.props.tweets
-    const filters = this.props.filters
     const config = {
       'created_at': 'to-timestamp',
       'text': 'to-lowercase',
@@ -105,6 +104,12 @@ class TweetQueryFilter extends Component {
       'entities.hashtags': 'get-count'
     }
 
+    const filters = this.props.filters.map((filter) => {
+      if (filter.key === 'created_at') filter.value = new Date(filter.value).getTime()
+      return filter
+    })
+
+    const tweetList = this.props.tweets
     const normalizedTweetList = this._performDataNormalization(tweetList, config)
     const filteredIds = filters.reduce(function filterLoop (amount, filter) {
       var _allMatches = this._performComparisonAndGetThoseIds(normalizedTweetList, filter)
