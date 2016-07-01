@@ -95,6 +95,9 @@ body{
   padding: 10px;
   background-color: #f5f8fa;
 }
+.tweet-query-filter-footer > *{
+  margin-right: 10px;
+}
 .tweet-query-filter-body{
   padding: 20px 10px;
 }

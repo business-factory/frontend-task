@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { applyFilterAction } from '../actions/index'
+import { applyFilterAction, fetchTweetsAction } from '../actions/index'
 import FilterForm from './filter-form'
 import FilterItem from './filter-item'
 
@@ -10,6 +10,7 @@ class TweetQueryFilter extends Component {
     super(props)
 
     this.onFilterTweetsButtonClick = this.onFilterTweetsButtonClick.bind(this)
+    this.onReloadTweetsButtonClick = this.onReloadTweetsButtonClick.bind(this)
   }
 
   _performComparisonAndGetThoseIds (list, filter) {
@@ -105,12 +106,23 @@ class TweetQueryFilter extends Component {
     }
 
     const normalizedTweetList = this._performDataNormalization(tweetList, config)
-    const filteredIds = this._performComparisonAndGetThoseIds(normalizedTweetList, filters[0])
+    const filteredIds = filters.reduce(function filterLoop (amount, filter) {
+      var _allMatches = this._performComparisonAndGetThoseIds(normalizedTweetList, filter)
+      var _nestedMatches = _allMatches.filter((id) => {
+        return amount.indexOf(id) !== -1
+      })
+      return amount.length === 0 ? _allMatches : _nestedMatches
+    }.bind(this), [])
+
     const filteredList = tweetList.filter((tweet) => {
       return filteredIds.indexOf(tweet.id) !== -1
     })
 
     this.props.applyFilterAction(filteredList)
+  }
+
+  onReloadTweetsButtonClick (event) {
+    this.props.fetchTweetsAction(this.props.user.id)
   }
 
   render () {
@@ -141,6 +153,9 @@ class TweetQueryFilter extends Component {
         {filters.length > 0 ? (<button type="button" className="btn btn-sm btn-primary" onClick={this.onFilterTweetsButtonClick}>
                                  Filter Tweets
                                </button>) : null}
+        {!isLoading ? (<button type="button" className="btn btn-sm btn-secondary" onClick={this.onReloadTweetsButtonClick}>
+                         Reload Tweets
+                       </button>) : null}
       </div>
     </div>
     )
@@ -157,7 +172,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
-    applyFilterAction: applyFilterAction
+    applyFilterAction: applyFilterAction,
+    fetchTweetsAction: fetchTweetsAction
   }, dispatch)
 }
 
