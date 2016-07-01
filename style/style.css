@@ -55,9 +55,6 @@ body{
   margin-right: 0
 }
 
-/*component: app-panel*/
-/*.app-panel {}*/
-
 /*component: selected-user-detail*/
 .tweet-list,
 .tweet-query-filter,
@@ -104,6 +101,7 @@ body{
 .tweet-query-filter-header small {
   font-size: 70%;
 }
+
 /*component: filter-form*/
 .tweet-query-filter-header .filter-form select.form-control,
 .tweet-query-filter-header .filter-form input.form-control {
@@ -120,6 +118,18 @@ body{
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
   margin-right: 10px;
+}
+
+/*component: filter-form*/
+.filter-item{
+  padding: 5px
+}
+.filter-item > * {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+.filter-item:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
 }
 
 .cover-content {

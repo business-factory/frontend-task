@@ -6,18 +6,44 @@ import { removeFilterAction } from '../actions/index'
 class FilterItem extends Component {
   constructor (props) {
     super(props)
-    // this.state = {}
-    this.onFormSubmit = this.onFormSubmit.bind(this)
+
+    this.dictionary = {
+      'created_at': 'Date',
+      'text': 'Tweet',
+      'favorite_count': 'Number of likes',
+      'entities.user_mentions': 'Number of mentions',
+      'entities.hashtags': 'Number of hashtags',
+      'eq': 'Equals',
+      'neq': 'Not equals',
+      'i_contains': 'Includes',
+      'i_not_contains': 'Not includes',
+      'gt': 'Greater than',
+      'lt': 'Less than'
+    }
+
+    this.onRemoveButtonClick = this.onRemoveButtonClick.bind(this)
   }
 
-  onFormSubmit (event) {
-    event.preventDefault()
-    this.props.removeFilterAction(this.state)
+  onRemoveButtonClick (event, filter) {
+    this.props.removeFilterAction(this.props.filter)
+  }
+
+  getDictionary (id) {
+    return this.dictionary[id]
   }
 
   render () {
     return (
-      <div>FilterItem</div>
+    <div className="filter-item">
+      <button type="button" 
+        className="btn btn-sm btn-secondary"
+        onClick={this.onRemoveButtonClick}>
+        Remove
+      </button>
+      <span>{this.getDictionary(this.props.filter.key)}</span>
+      <strong>{this.getDictionary(this.props.filter.comparator)}</strong>
+      <span>{this.props.filter.value}</span>
+    </div>
     )
   }
 }

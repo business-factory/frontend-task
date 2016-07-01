@@ -64,13 +64,15 @@ class SearchBar extends Component {
   }
 
   render() {
+    const isLoading = this.props.loading_status
+    
     return (
       <div className={'pos-relative' + (this.state.showList ? ' open' : '') }>
         <form onSubmit={this.onFormSubmit}>
           <FormGroup controlId='search-query'>
             <FormControl
               type='text'
-              placeholder='Search for users on Twitter'
+              placeholder={isLoading ? 'Loading...' : 'Search for users on Twitter'}
               value={this.state.value}
               onChange={this.onInputChange}
               onFocus={this.onInputFocus} />
@@ -83,6 +85,12 @@ class SearchBar extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return {
+    loading_status: state.loading_status
+  }
+}
+
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
     fetchUsersAction: fetchUsersAction,
@@ -90,4 +98,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch)
 }
 
-export default connect(null, mapDispatchToProps)(SearchBar)
+export default connect(mapStateToProps, mapDispatchToProps)(SearchBar)

@@ -57,7 +57,14 @@ class FilterForm extends Component {
 
   onFormSubmit (event) {
     event.preventDefault()
-    this.props.addFilterAction(this.state)
+    
+    this.props.addFilterAction({
+      key: this.state.key,
+      comparator: this.state.comparator,
+      value: this.state.value,
+      timestamp: new Date().getTime()
+    })
+    
     this.setState({ value: '' })
   }
 

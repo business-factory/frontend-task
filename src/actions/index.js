@@ -16,7 +16,7 @@ export const ADD_FILTER_ACTION = 'ADD_FILTER'
 export const REMOVE_FILTER_ACTION = 'REMOVE_FILTER'
 
 // Users
-export function fetchUsersAction (q, count = 5) {
+export function fetchUsersAction (q, count = 7) {
   const request = new Promise(function promiseDefinition (resolve, reject) {
     codeBird.__call('users_search', `q=${window.encodeURIComponent(q)}&count=${count}`,
       function promiseDefinitionSuccess (reply, rate_limit_status) {
@@ -63,7 +63,6 @@ export function showLoadingStatus () {
 
 // Filters
 export function addFilterAction (filter) {
-  console.log('addFilterAction : ', filter)
   return {
     type: ADD_FILTER_ACTION,
     payload: filter
