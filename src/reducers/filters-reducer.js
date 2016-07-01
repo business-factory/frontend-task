@@ -1,12 +1,12 @@
-import { ADD_FILTER_ACTION, REMOVE_FILTER_ACTION } from '../actions/index'
+import { ADD_TWEET_FILTER_ACTION, REMOVE_TWEET_FILTER_ACTION } from '../actions/index'
 
 const INITIAL_STATE = []
 
 export default function filtersReducerDefinition (state = INITIAL_STATE , action) {
   switch (action.type) {
-    case ADD_FILTER_ACTION:
+    case ADD_TWEET_FILTER_ACTION:
       return [...state, action.payload]
-    case REMOVE_FILTER_ACTION:
+    case REMOVE_TWEET_FILTER_ACTION:
       const indexItem = state.indexOf(action.payload)
       return [
         ...state.slice(0, indexItem),

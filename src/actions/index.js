@@ -12,8 +12,9 @@ export const FETCH_TWEETS_ACTION = 'FETCH_TWEETS'
 export const FETCH_USERS_ACTION = 'FETCH_USERS'
 export const SELECT_USER_ACTION = 'SELECT_USER'
 export const SHOW_LOADING_ACTION = 'SHOW_LOADING'
-export const ADD_FILTER_ACTION = 'ADD_FILTER'
-export const REMOVE_FILTER_ACTION = 'REMOVE_FILTER'
+export const ADD_TWEET_FILTER_ACTION = 'ADD_TWEET_FILTER'
+export const REMOVE_TWEET_FILTER_ACTION = 'REMOVE_TWEET_FILTER'
+export const APPLY_TWEET_FILTER_ACTION = 'APPLY_TWEET_FILTER'
 
 // Users
 export function fetchUsersAction (q, count = 7) {
@@ -64,13 +65,19 @@ export function showLoadingStatus () {
 // Filters
 export function addFilterAction (filter) {
   return {
-    type: ADD_FILTER_ACTION,
+    type: ADD_TWEET_FILTER_ACTION,
     payload: filter
   }
 }
 export function removeFilterAction (filter) {
   return {
-    type: REMOVE_FILTER_ACTION,
+    type: REMOVE_TWEET_FILTER_ACTION,
     payload: filter
+  }
+}
+export function applyFilterAction (filteredList) {
+  return {
+    type: APPLY_TWEET_FILTER_ACTION,
+    payload: filteredList
   }
 }

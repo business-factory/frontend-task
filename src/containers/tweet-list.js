@@ -14,7 +14,6 @@ class TweetList extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
-    // You don't have to do this check first, but it can help prevent an unneeded render
     if (nextProps.tweets !== this.state.componentList) {
       this.setState({ componentList: nextProps.tweets })
     }
