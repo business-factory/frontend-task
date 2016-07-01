@@ -129,7 +129,7 @@ class TweetList extends Component {
            return (
            <tr key={i}>
              <td dangerouslySetInnerHTML={{ __html: this._linkify(tweet.text) }}></td>
-             <td className='text-center'>
+             <td>
                {parseInt(tweet.favorite_count).toLocaleString()}
              </td>
              <td className='text-center'>

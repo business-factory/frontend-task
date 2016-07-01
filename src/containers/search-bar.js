@@ -71,7 +71,9 @@ class SearchBar extends Component {
         <form onSubmit={this.onFormSubmit}>
           <FormGroup controlId='search-query'>
             <FormControl
-              type='text'
+              type="text"
+              autoComplete="off"
+              spellCheck="false"
               placeholder={isLoading ? 'Loading...' : 'Search for users on Twitter'}
               value={this.state.value}
               onChange={this.onInputChange}

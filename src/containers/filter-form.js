@@ -102,7 +102,7 @@ class FilterForm extends Component {
           onChange={this.onInputChange} />
       </div>
       <button type="submit" className="btn btn-sm btn-secondary">
-        Confirm
+        Add
       </button>
     </form>
     )

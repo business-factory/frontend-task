@@ -1,17 +1,20 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-// import moment from 'moment'
-import { applyFilterAction, fetchTweetsAction } from '../actions/index'
+import { applyFilterAction, fetchTweetsAction, showLoadingStatus } from '../actions/index'
 import FilterForm from './filter-form'
 import FilterItem from './filter-item'
+import ModalLoadedTweetsStatistics from '../components/modal-loaded-tweets-statistics'
 
 class TweetQueryFilter extends Component {
   constructor (props) {
     super(props)
 
+    this.state = { isModalVisible: false }
     this.onFilterTweetsButtonClick = this.onFilterTweetsButtonClick.bind(this)
     this.onReloadTweetsButtonClick = this.onReloadTweetsButtonClick.bind(this)
+    this.setModalVisible = this.setModalVisible.bind(this)
+    this.onModalClose = this.onModalClose.bind(this)
   }
 
   _performComparisonAndGetThoseIds (list, filter) {
@@ -95,6 +98,14 @@ class TweetQueryFilter extends Component {
     })
   }
 
+  setModalVisible () {
+    this.setState({ isModalVisible: true })
+  }
+
+  onModalClose () {
+    this.setState({ isModalVisible: false })
+  }
+
   onFilterTweetsButtonClick (event) {
     const config = {
       'created_at': 'to-timestamp',
@@ -127,7 +138,9 @@ class TweetQueryFilter extends Component {
   }
 
   onReloadTweetsButtonClick (event) {
+    this.props.showLoadingStatus()
     this.props.fetchTweetsAction(this.props.user.id)
+  // remove filters
   }
 
   render () {
@@ -136,17 +149,15 @@ class TweetQueryFilter extends Component {
     const filters = this.props.filters || []
 
     if (!tweets.length) {
-      return (
-      <div className='text-xs-center cover-content'>
-        <h3>{isLoading ? 'Loading...' : 'Choose a user to see its tweets'}</h3>
-      </div>
-      )
+      return false
     }
 
     return (
     <div className="tweet-query-filter p-a-0">
       <div className="tweet-query-filter-header">
-        <small>* Use these rules to filter tweets</small>
+        <label>
+          Reduce the range of tweets based on :
+        </label>
         <FilterForm />
       </div>
       <div className="tweet-query-filter-body">
@@ -156,12 +167,16 @@ class TweetQueryFilter extends Component {
       </div>
       <div className="tweet-query-filter-footer">
         {filters.length > 0 ? (<button type="button" className="btn btn-sm btn-primary" onClick={this.onFilterTweetsButtonClick}>
-                                 Filter Tweets
+                                 Search Tweets
                                </button>) : null}
-        {!isLoading ? (<button type="button" className="btn btn-sm btn-secondary" onClick={this.onReloadTweetsButtonClick}>
-                         Reload Tweets
-                       </button>) : null}
+        <button type="button" className="btn btn-sm btn-secondary pull-xs-right m-a-0" onClick={this.onReloadTweetsButtonClick}>
+          {!isLoading ? 'Show all Tweets' : 'Loading...'}
+        </button>
+        <button type="button" className="btn btn-sm btn-secondary" onClick={this.setModalVisible}>
+          Tweets Statistics
+        </button>
       </div>
+      <ModalLoadedTweetsStatistics isVisible={this.state.isModalVisible} onModalClose={this.onModalClose} tweets={tweets} />
     </div>
     )
   }
@@ -178,7 +193,8 @@ function mapStateToProps (state) {
 function mapDispatchToProps (dispatch) {
   return bindActionCreators({
     applyFilterAction: applyFilterAction,
-    fetchTweetsAction: fetchTweetsAction
+    fetchTweetsAction: fetchTweetsAction,
+    showLoadingStatus: showLoadingStatus
   }, dispatch)
 }
 

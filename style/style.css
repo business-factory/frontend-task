@@ -28,10 +28,9 @@ body{
   background-color: white;
 	box-shadow: 0 1px 4px rgba(0,0,0,0.25);
   position: absolute;
-  width: 99%;
+  width: 100%;
   border-radius: 4px;
   margin-top: 3px;
-  margin-left: .5%;
 }
 .search-result-list li {
   display: flex;
@@ -85,21 +84,27 @@ body{
   max-width: 162px
 }
 
-/*tweet-query-filter*/
+/*component: tweet-query-filter*/
 .tweet-query-filter {
   margin-bottom: 20px;
   overflow: hidden
 }
 .tweet-query-filter-header,
 .tweet-query-filter-footer{
-  padding: 10px;
-  background-color: #f5f8fa;
+  padding: 0.95rem;
+  background-color: #fff;
+}
+.tweet-query-filter-header{
+  border-bottom: 2px solid #eceeef;
+}
+.tweet-query-filter-footer {
+  border-bottom: 1px solid #eceeef;
 }
 .tweet-query-filter-footer > *{
   margin-right: 10px;
 }
 .tweet-query-filter-body{
-  padding: 20px 10px;
+  padding: 0;
 }
 .tweet-query-filter-header small {
   font-size: 70%;
@@ -117,15 +122,16 @@ body{
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px
 }
-.tweet-query-filter-header .filter-form .form-control:nth-last-child(1) {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
-  margin-right: 10px;
+.tweet-query-filter-header button{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px; 
 }
 
 /*component: filter-form*/
 .filter-item{
-  padding: 5px
+  padding: 0.95rem
 }
 .filter-item > * {
   margin-right: 10px;
@@ -133,13 +139,6 @@ body{
 }
 .filter-item:nth-of-type(odd) {
   background-color: rgba(0,0,0,.05);
-}
-
-.cover-content {
-  min-height: 400px;
-  padding: 40px;
-  background: url('../svg/twitter-logo.svg') no-repeat center center;
-  background-size: 20%
 }
 
 /*component: tweet-list*/
@@ -164,11 +163,63 @@ body{
   border-color: #000000 transparent transparent transparent;
 }
 
+.modal-header,
+.modal-footer{
+  padding: 7px 15px;
+}
+.modal-title{
+  text-align: center;
+  color: #0275d8;
+}
+.modal-backdrop.in{
+  opacity: 0.65
+}
+.modal-backdrop {
+  background-color: #4e585c;
+}
+.modal-header .close {
+  margin-top: 8px;
+}
+.tweets-stats{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tweets-stats ul,
+.tweets-stats article {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e1e8ed;
+  margin: 10px;
+  width: 265px;
+}
+.tweets-stats article h5{
+  color: #0275d8;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.tweets-stats article span{
+  font-size: 0.8rem;
+}
+.tweets-stats ul{
+  text-align: left;
+  line-height: 2;
+  padding: 0
+}
+.tweets-stats ul li{
+  padding: 0 10px;
+}
+.tweets-stats ul li:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
 /*resets*/
 ul,li,figure{padding:0;margin:0}
 li{list-style:none}
 .table th, .table td {
-  padding: 0.45rem;
+  padding: 0.95rem;
   font-size: 0.8rem
 }
 
