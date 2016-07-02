@@ -9,8 +9,10 @@ class AppPanel extends Component {
     return (
       <div className='app-panel'>
         <SelectUserDetail user={this.props.selected_user} />
-        <TweetQueryFilter user={this.props.selected_user}/>
-        <TweetList />
+        <div className="container">
+          <TweetQueryFilter user={this.props.selected_user}/>
+          <TweetList />
+        </div>
       </div>
     )
   }

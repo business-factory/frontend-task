@@ -16,20 +16,22 @@ export default class SelectUserDetail extends Component {
     }
 
     return (
-      <div className='selected-user-detail'>
-        <figure>
-          <img src={String(user.profile_image_url).replace('_normal', '_400x400') } alt={user.name} />
-        </figure>
-        <ul>
-          <li className="highlight-field"><strong>{user.name}</strong></li>
-          <li className="opacity-5"><small> @{user.screen_name}</small></li>
-          <li>{user.location}</li>
-          <li dangerouslySetInnerHTML={{ __html: this.linkify(user.description) }}></li>
-          <li><strong>Followers</strong>: {parseInt(user.followers_count).toLocaleString() }</li>
-          <li><strong>Friends</strong>: {parseInt(user.friends_count).toLocaleString() }</li>
-          <li><strong>Listed</strong>: {parseInt(user.listed_count).toLocaleString() }</li>
-          <li><strong>Favourites</strong>: {parseInt(user.favourites_count).toLocaleString() }</li>
-        </ul>
+      <div className="selected-user-detail">
+        <div className="container">
+          <figure>
+            <img src={String(user.profile_image_url).replace('_normal', '_400x400') } alt={user.name} />
+          </figure>
+          <ul>
+            <li className="highlight-field"><strong>{user.name}</strong></li>
+            <li className="opacity-5"><small> @{user.screen_name}</small></li>
+            <li>{user.location}</li>
+            <li dangerouslySetInnerHTML={{ __html: this.linkify(user.description) }}></li>
+            <li><strong>Followers</strong>: {parseInt(user.followers_count).toLocaleString() }</li>
+            <li><strong>Friends</strong>: {parseInt(user.friends_count).toLocaleString() }</li>
+            <li><strong>Listed</strong>: {parseInt(user.listed_count).toLocaleString() }</li>
+            <li><strong>Favourites</strong>: {parseInt(user.favourites_count).toLocaleString() }</li>
+          </ul>
+        </div>
       </div>
     )
   }

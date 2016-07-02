@@ -40,10 +40,6 @@ class TweetList extends Component {
         return data
       }
     }
-
-    // new Date('a').toString()
-    // new Date("Wed Jun 29 23:01:04 +0000 2016").getTime()
-
     outputList = list.sort(function sort (a, b) {
       if (makeSortable(a[column]) > makeSortable(b[column])) {
         return 1

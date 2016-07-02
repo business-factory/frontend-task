@@ -13,6 +13,7 @@ export const SHOW_LOADING_ACTION = 'SHOW_LOADING'
 export const ADD_TWEET_FILTER_ACTION = 'ADD_TWEET_FILTER'
 export const REMOVE_TWEET_FILTER_ACTION = 'REMOVE_TWEET_FILTER'
 export const APPLY_TWEET_FILTER_ACTION = 'APPLY_TWEET_FILTER'
+export const CLEAR_ALL_TWEET_FILTER_ACTION = 'CLEAR_ALL_TWEET_FILTER'
 
 // Users
 export function fetchUsersAction (q, count = 7) {
@@ -77,5 +78,11 @@ export function applyFilterAction (filteredList) {
   return {
     type: APPLY_TWEET_FILTER_ACTION,
     payload: filteredList
+  }
+}
+export function clearAllFilterAction () {
+  return {
+    type: CLEAR_ALL_TWEET_FILTER_ACTION,
+    payload: []
   }
 }

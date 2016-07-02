@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { applyFilterAction, fetchTweetsAction, showLoadingStatus } from '../actions/index'
+import { applyFilterAction, fetchTweetsAction, showLoadingStatus, clearAllFilterAction } from '../actions/index'
 import FilterForm from './filter-form'
 import FilterItem from './filter-item'
 import ModalLoadedTweetsStatistics from '../components/modal-loaded-tweets-statistics'
@@ -139,8 +139,8 @@ class TweetQueryFilter extends Component {
 
   onReloadTweetsButtonClick (event) {
     this.props.showLoadingStatus()
+    this.props.clearAllFilterAction()
     this.props.fetchTweetsAction(this.props.user.id)
-  // remove filters
   }
 
   render () {
@@ -148,7 +148,7 @@ class TweetQueryFilter extends Component {
     const isLoading = this.props.loading_status
     const filters = this.props.filters || []
 
-    if (!tweets.length) {
+    if (!tweets.length && !filters.length) {
       return false
     }
 
@@ -170,7 +170,7 @@ class TweetQueryFilter extends Component {
                                  Search Tweets
                                </button>) : null}
         <button type="button" className="btn btn-sm btn-secondary pull-xs-right m-a-0" onClick={this.onReloadTweetsButtonClick}>
-          {!isLoading ? 'Show all Tweets' : 'Loading...'}
+          {!isLoading ? 'Reload all Tweets' : 'Loading...'}
         </button>
         <button type="button" className="btn btn-sm btn-secondary" onClick={this.setModalVisible}>
           Tweets Statistics
@@ -194,7 +194,8 @@ function mapDispatchToProps (dispatch) {
   return bindActionCreators({
     applyFilterAction: applyFilterAction,
     fetchTweetsAction: fetchTweetsAction,
-    showLoadingStatus: showLoadingStatus
+    showLoadingStatus: showLoadingStatus,
+    clearAllFilterAction: clearAllFilterAction
   }, dispatch)
 }
 

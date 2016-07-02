@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class App extends Component {
+export default class RoiHunterLogo extends Component {
   render () {
     return (
       <figure>

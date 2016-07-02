@@ -63,11 +63,14 @@ body{
   border: 1px solid #e1e8ed;
   border-radius: 8px;
 }
-.selected-user-detail {
-  display: flex;
-  align-items: center;
+.selected-user-detail{
   font-size: .88rem;
-  margin-bottom: 20px
+  margin-bottom: 20px;
+  border-radius: none
+}
+.selected-user-detail > div {
+  display: flex;
+  align-items: center
 }
 .selected-user-detail .highlight-field {
     font-size: 1.3rem;
@@ -95,10 +98,10 @@ body{
   background-color: #fff;
 }
 .tweet-query-filter-header{
-  border-bottom: 2px solid #eceeef;
+  border-bottom: 1px solid #eceeef;
 }
 .tweet-query-filter-footer {
-  border-bottom: 1px solid #eceeef;
+  border-top: 1px solid #eceeef;
 }
 .tweet-query-filter-footer > *{
   margin-right: 10px;
