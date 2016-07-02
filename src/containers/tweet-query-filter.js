@@ -167,7 +167,7 @@ class TweetQueryFilter extends Component {
     <div className="tweet-query-filter p-a-0">
       <div className="tweet-query-filter-header">
         <label>
-          Reduce the range of tweets based on :
+          Reduce your tweet’s range based on:
         </label>
         <FilterForm />
       </div>

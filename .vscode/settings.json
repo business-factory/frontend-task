@@ -18,6 +18,7 @@
     "**/.git": true,
     "**/.svn": true,
     "**/node_modules": true,
+    "**/.vscode": true,
     "**/.DS_Store": true
   },
   "ecmaFeatures": {

@@ -7,7 +7,7 @@ class SearchResultList extends Component {
     const { users } = this.props
 
     if (!users.length) {
-      return ( <div></div> )
+      return false
     }
 
     return (

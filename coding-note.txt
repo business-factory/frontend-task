@@ -16,3 +16,5 @@ https://api.twitter.com/1.1/users/search.json?
 https://api.twitter.com/1.1/statuses/user_timeline.json?
 
 https://dev.twitter.com/rest/reference/get/statuses/user_timeline?
+
+Explain the reasons about https://github.com/jublonet/codebird-js.git

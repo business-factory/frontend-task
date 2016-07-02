@@ -8,7 +8,7 @@ class SearchResultListItem extends Component {
     const { user } = this.props
     
     return (
-    <li key={user.name} onClick={ () => {
+    <li className="search-result-list-item" key={user.name} onClick={ () => {
       this.props.showLoadingStatus()
       this.props.selectUserAction(this.props.user)
       this.props.fetchTweetsAction(this.props.user.id)

@@ -12,7 +12,7 @@ class SearchBar extends Component {
 
     this.state = {
       value: '',
-      showList: true
+      showList: false
     }
 
     this.onInputChange = this.onInputChange.bind(this)
@@ -28,6 +28,12 @@ class SearchBar extends Component {
 
   componentWillUnmount () {
     document.removeEventListener('click', this.onDocumentClick, false)
+  }
+
+  componentWillReceiveProps (globalProps) {
+    if (globalProps.selected_user && globalProps.selected_user !== this.state.value) {
+      this.setState({ value: globalProps.selected_user.name })
+    }
   }
 
   callFetchUsersAction (query) {
@@ -66,7 +72,7 @@ class SearchBar extends Component {
     const isLoading = this.props.loading_status
 
     return (
-    <div className={'pos-relative' + (this.state.showList ? ' open' : '')}>
+    <div className={'search-bar' + (this.state.showList ? ' open' : '')}>
       <form onSubmit={this.onFormSubmit}>
         <FormGroup controlId='search-query'>
           <FormControl
@@ -80,7 +86,7 @@ class SearchBar extends Component {
           <FormControl.Feedback />
         </FormGroup>
       </form>
-      <SearchResultList />
+      <SearchResultList/>
     </div>
     )
   }
@@ -88,7 +94,8 @@ class SearchBar extends Component {
 
 function mapStateToProps (state) {
   return {
-    loading_status: state.loading_status
+    loading_status: state.loading_status,
+    selected_user: state.selected_user
   }
 }
 

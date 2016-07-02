@@ -14,9 +14,9 @@ class TweetList extends Component {
   }
 
   // Lifecycle 
-  componentWillReceiveProps (nextProps) {
-    if (nextProps.tweets !== this.state.componentList) {
-      this.setState({ componentList: nextProps.tweets })
+  componentWillReceiveProps (globalProps) {
+    if (globalProps.tweets !== this.state.componentList) {
+      this.setState({ componentList: globalProps.tweets })
       this.setState({ orderBy: '' })
     }
   }

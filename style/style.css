@@ -3,13 +3,12 @@ body{
   color: #313854;
   font-family: Arial, sans-serif;
 }
-.app-container{
-  padding-top: 20px
-}
+/*.app-container{}*/
 /*header-content*/
 .header-content{
   display: flex;
   align-items: center;
+  margin-top: 20px;
   margin-bottom: 20px
 }
 .header-content > *{
@@ -19,6 +18,34 @@ body{
 	margin-bottom: 0
 }
 
+.cover-page {
+  text-align: center;
+  padding-top: 15%;
+}
+.cover-page .logo {
+  max-width: 400px;
+  margin: 0 auto
+}
+.cover-page .logo img{
+  width: 100%;
+  max-width: 400px;
+}
+.cover-page p {
+  width: 530px;
+  margin: 15px auto;
+  line-height: 1.4;
+  text-align: center
+}
+.cover-page .search-bar{
+  width: 500px;
+  margin: 0 auto
+}
+
+/*component: search-bar*/
+.search-bar{
+  position: relative
+}
+
 /*component: search-result-list*/
 .open > .search-result-list{
   display: block
@@ -26,11 +53,12 @@ body{
 .search-result-list {
   display: none;
   background-color: white;
-	box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+	box-shadow: 0 1px 8px rgba(0,0,0,0.15);
+  border:1px solid rgba(0,0,0,.15);
   position: absolute;
   width: 100%;
   border-radius: 4px;
-  margin-top: 3px;
+  top: 39px
 }
 .search-result-list li {
   display: flex;

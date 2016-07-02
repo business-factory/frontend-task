@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import RoiHunterLogo from '../components/roi-hunter-logo'
+import RoiHunterLogo from '../components/roihunter-logo'
 import SearchBar from '../containers/search-bar'
 import AppPanel from '../containers/app-panel'
 
@@ -9,7 +9,7 @@ export default class MainPage extends Component {
     <div>
       <div className='container'>
         <div className='header-content'>
-          <RoiHunterLogo />
+          <RoiHunterLogo link="/home" />
           <SearchBar />
         </div>
       </div>

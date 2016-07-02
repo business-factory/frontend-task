@@ -1,3 +1,6 @@
+import Codebird from '../../third-party-tools/codebird'
+// import Codebird from 'codebird'
+
 // A Twitter library in JavaScript. https://www.npmjs.com/package/codebird
 // This library has been modified in order to fix problems with OAuth dynamic fields
 const codeBird = new Codebird()
