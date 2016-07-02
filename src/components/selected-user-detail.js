@@ -9,7 +9,7 @@ export default class SelectUserDetail extends Component {
   }
 
   render() {
-    const user = this.props.user
+    const { user } = this.props
 
     if (!user) {
       return false

@@ -116,7 +116,18 @@ class TweetQueryFilter extends Component {
     }
 
     const filters = this.props.filters.map((filter) => {
-      if (filter.key === 'created_at') filter.value = new Date(filter.value).getTime()
+      switch (filter.key) {
+        case 'created_at':
+          filter.value = new Date(filter.value).getTime()
+          break
+        case 'text':
+          filter.value = String(filter.value).toLowerCase()
+          break
+        default:
+          filter.value = parseFloat(filter.value)
+          break
+      }
+      
       return filter
     })
 

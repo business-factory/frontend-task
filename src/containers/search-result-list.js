@@ -4,13 +4,16 @@ import SearchResultListItem from './search-result-list-item'
 
 class SearchResultList extends Component {
   render () {
-    if (!this.props.users.length) {
+    const { users } = this.props
+
+    if (!users.length) {
       return ( <div></div> )
     }
+
     return (
     <div className='search-result-list'>
       <ul>
-        {this.props.users.map((user) => (<SearchResultListItem key={user.id} user={user} /> ))}
+        {users.map((user) => (<SearchResultListItem key={user.id} user={user} /> ))}
       </ul>
     </div>
     )

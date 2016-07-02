@@ -41,14 +41,16 @@ class FilterItem extends Component {
   }
 
   render () {
+    const { filter } = this.props
+
     return (
     <div className="filter-item">
       <button type="button" className="btn btn-sm btn-secondary" onClick={this.onRemoveButtonClick}>
         Remove
       </button>
-      <span>{this.getLabel(this.props.filter.key)}</span>
-      <strong>{this.getLabel(this.props.filter.comparator)}</strong>
-      <span>{this.formatValue(this.props.filter.key, this.props.filter.value)}</span>
+      <span>{this.getLabel(filter.key)}</span>
+      <strong>{this.getLabel(filter.comparator)}</strong>
+      <span>{this.formatValue(filter.key, filter.value)}</span>
     </div>
     )
   }

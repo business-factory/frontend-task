@@ -17,6 +17,7 @@ class TweetList extends Component {
   componentWillReceiveProps (nextProps) {
     if (nextProps.tweets !== this.state.componentList) {
       this.setState({ componentList: nextProps.tweets })
+      this.setState({ orderBy: '' })
     }
   }
 

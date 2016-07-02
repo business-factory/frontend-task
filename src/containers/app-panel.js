@@ -6,11 +6,13 @@ import TweetList from '../containers/tweet-list'
 
 class AppPanel extends Component {
   render () {
+    const { selected_user } = this.props
+    
     return (
     <div>
-      <SelectUserDetail user={this.props.selected_user} />
+      <SelectUserDetail user={selected_user} />
       <div className="container">
-        <TweetQueryFilter user={this.props.selected_user} />
+        <TweetQueryFilter user={selected_user} />
         <TweetList />
       </div>
     </div>

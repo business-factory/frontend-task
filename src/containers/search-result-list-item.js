@@ -5,7 +5,8 @@ import { selectUserAction, fetchTweetsAction, showLoadingStatus } from '../actio
 
 class SearchResultListItem extends Component {
   render () {
-    const user = this.props.user
+    const { user } = this.props
+    
     return (
     <li key={user.name} onClick={ () => {
       this.props.showLoadingStatus()
