@@ -158,12 +158,12 @@ body{
 .tweet-list thead tr th .caret.asc{
   margin-top: 6px;
   border-width: 0 3px 3px 3px;
-  border-color: transparent transparent #000000 transparent;
+  border-color: transparent transparent #0275d8 transparent;
 }
 .tweet-list thead tr th .caret.desc{
   margin-top: 7px;
   border-width: 3px 3px 0 3px;
-  border-color: #000000 transparent transparent transparent;
+  border-color: #0275d8 transparent transparent transparent;
 }
 
 .modal-header,

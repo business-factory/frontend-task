@@ -111,16 +111,20 @@ class TweetList extends Component {
       <thead>
         <tr>
           <th onClick={this.reorderListByColumn} data-column="text" data-order-direction="">
-            <span>Tweet</span><span className={'caret asc' + (this.state.orderBy != 'text' ? ' hidden' : '')}></span>
+            <span className={(this.state.orderBy == 'text' ? 'text-primary' : '')}>Tweet</span>
+            <span className={'caret asc' + (this.state.orderBy != 'text' ? ' hidden' : '')}></span>
           </th>
           <th onClick={this.reorderListByColumn} data-column="favorite_count" data-order-direction="">
-            <span>Favorites</span><span className={'caret asc' + (this.state.orderBy != 'favorite_count' ? ' hidden' : '')}></span>
+            <span className={(this.state.orderBy == 'favorite_count' ? 'text-primary' : '')}>Favorites</span>
+            <span className={'caret asc' + (this.state.orderBy != 'favorite_count' ? ' hidden' : '')}></span>
           </th>
           <th onClick={this.reorderListByColumn} data-column="retweet_count" data-order-direction="">
-            <span>Retweets</span><span className={'caret asc' + (this.state.orderBy != 'retweet_count' ? ' hidden' : '')}></span>
+            <span className={(this.state.orderBy == 'retweet_count' ? 'text-primary' : '')}>Retweets</span>
+            <span className={'caret asc' + (this.state.orderBy != 'retweet_count' ? ' hidden' : '')}></span>
           </th>
           <th onClick={this.reorderListByColumn} data-column="created_at" data-order-direction='desc'>
-            <span>Date</span><span className={'caret asc' + (this.state.orderBy != 'created_at' ? ' hidden' : '')}></span>
+            <span className={(this.state.orderBy == 'created_at' ? 'text-primary' : '')}>Date</span>
+            <span className={'caret asc' + (this.state.orderBy != 'created_at' ? ' hidden' : '')}></span>
           </th>
         </tr>
       </thead>
