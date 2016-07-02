@@ -5,20 +5,20 @@ import TweetQueryFilter from '../containers/tweet-query-filter'
 import TweetList from '../containers/tweet-list'
 
 class AppPanel extends Component {
-  render() {
+  render () {
     return (
-      <div className='app-panel'>
-        <SelectUserDetail user={this.props.selected_user} />
-        <div className="container">
-          <TweetQueryFilter user={this.props.selected_user}/>
-          <TweetList />
-        </div>
+    <div>
+      <SelectUserDetail user={this.props.selected_user} />
+      <div className="container">
+        <TweetQueryFilter user={this.props.selected_user} />
+        <TweetList />
       </div>
+    </div>
     )
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return { selected_user: state.selected_user }
 }
 

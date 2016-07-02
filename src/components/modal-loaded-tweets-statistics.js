@@ -112,11 +112,11 @@ export default class ModalLoadedTweetsStatistics extends Component {
           </article>
           <article>
             <h5>{parseFloat(favoriteCountAvg).toLocaleString()}</h5>
-            <span>Avarage per Tweet</span>
+            <span>Likes rate</span>
           </article>
           <article>
             <h5>{parseInt(userMentionsSum).toLocaleString()}</h5>
-            <span>User mention</span>
+            <span>User mentions</span>
           </article>
           <article>
             <h5>{parseInt(getHashtagsSum).toLocaleString()}</h5>

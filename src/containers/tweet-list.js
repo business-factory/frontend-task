@@ -7,12 +7,13 @@ class TweetList extends Component {
 
     this.state = {
       componentList: [],
-      orderBy: 'created_at'
+      orderBy: ''
     }
 
     this.reorderListByColumn = this.reorderListByColumn.bind(this)
   }
 
+  // Lifecycle 
   componentWillReceiveProps (nextProps) {
     if (nextProps.tweets !== this.state.componentList) {
       this.setState({ componentList: nextProps.tweets })
@@ -67,22 +68,37 @@ class TweetList extends Component {
     return null
   }
 
-  _resetOrderDirectionStatus () {}
+  _resetOrderDirectionStatus (elementTh) {
+    const currentColumn = elementTh.dataset['column']
+    const elementTr = elementTh.parentNode
+    var listElementsTh = elementTr.querySelectorAll('th')
+
+    for (var i = 0, th; th = listElementsTh[i]; i++) {
+      if (th.dataset['column'] == currentColumn) {
+        continue
+      }
+      
+      th.dataset.orderDirection = ''
+    }
+  }
 
   reorderListByColumn (event) {
-    var thElement = this._findClosestParentElement(event.target, 'th')
-    const column = thElement.dataset['field']
-    const oldOrderDirection = thElement.dataset['orderDirection']
+    const elementTh = this._findClosestParentElement(event.target, 'th')
+    const elementCaret = elementTh.querySelector('.caret')
+
+    const column = elementTh.dataset['column']
+    const oldOrderDirection = elementTh.dataset['orderDirection']
     const newOrderDirection = (oldOrderDirection === 'asc' ? 'desc' : 'asc')
 
-    const sortedList = this._sortListByColumn(this.props.tweets, column, newOrderDirection)
+    const sortedList = this._sortListByColumn(this.state.componentList, column, newOrderDirection)
 
     this.setState({ componentList: sortedList })
     this.setState({ orderBy: column })
+    
+    this._resetOrderDirectionStatus(elementTh)
 
-    thElement.dataset.orderDirection = newOrderDirection
-    thElement.querySelector('.caret').classList.remove(oldOrderDirection)
-    thElement.querySelector('.caret').classList.add(newOrderDirection)
+    elementTh.dataset.orderDirection = newOrderDirection
+    elementCaret.className = `caret ${newOrderDirection}`
   }
 
   render () {
@@ -94,28 +110,16 @@ class TweetList extends Component {
     <table className='tweet-list table table-striped'>
       <thead>
         <tr>
-          <th onClick={this.reorderListByColumn} data-field='text' data-order-direction='asc'>
+          <th onClick={this.reorderListByColumn} data-column="text" data-order-direction="">
             <span>Tweet</span><span className={'caret asc' + (this.state.orderBy != 'text' ? ' hidden' : '')}></span>
           </th>
-          <th
-            onClick={this.reorderListByColumn}
-            data-field='favorite_count'
-            data-order-direction='asc'
-            className='text-center'>
+          <th onClick={this.reorderListByColumn} data-column="favorite_count" data-order-direction="">
             <span>Favorites</span><span className={'caret asc' + (this.state.orderBy != 'favorite_count' ? ' hidden' : '')}></span>
           </th>
-          <th
-            onClick={this.reorderListByColumn}
-            data-field='retweet_count'
-            data-order-direction='asc'
-            className='text-center'>
+          <th onClick={this.reorderListByColumn} data-column="retweet_count" data-order-direction="">
             <span>Retweets</span><span className={'caret asc' + (this.state.orderBy != 'retweet_count' ? ' hidden' : '')}></span>
           </th>
-          <th
-            onClick={this.reorderListByColumn}
-            data-field='created_at'
-            data-order-direction='desc'
-            className='text-center'>
+          <th onClick={this.reorderListByColumn} data-column="created_at" data-order-direction='desc'>
             <span>Date</span><span className={'caret asc' + (this.state.orderBy != 'created_at' ? ' hidden' : '')}></span>
           </th>
         </tr>
@@ -128,10 +132,10 @@ class TweetList extends Component {
              <td>
                {parseInt(tweet.favorite_count).toLocaleString()}
              </td>
-             <td className='text-center'>
+             <td>
                {parseInt(tweet.retweet_count).toLocaleString()}
              </td>
-             <td className='text-center'>
+             <td>
                {new Date(tweet.created_at).toLocaleDateString()}
              </td>
            </tr>

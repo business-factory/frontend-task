@@ -6,16 +6,15 @@ import AppPanel from '../containers/app-panel'
 export default class App extends Component {
   render () {
     return (
-      <div>
-        <div className='container'>
-          <div className='header-content'>
-            <RoiHunterLogo />
-            <SearchBar />
-          </div>
+    <div>
+      <div className='container'>
+        <div className='header-content'>
+          <RoiHunterLogo />
+          <SearchBar />
         </div>
-        <AppPanel />
-        <div className='body-content'></div>
       </div>
+      <AppPanel />
+    </div>
     )
   }
 }

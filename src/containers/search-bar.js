@@ -7,7 +7,7 @@ import { FormGroup, FormControl } from 'react-bootstrap'
 import SearchResultList from './search-result-list'
 
 class SearchBar extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props)
 
     this.state = {
@@ -15,28 +15,27 @@ class SearchBar extends Component {
       showList: true
     }
 
-    // Hard binding
     this.onInputChange = this.onInputChange.bind(this)
     this.onInputFocus = this.onInputFocus.bind(this)
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onDocumentClick = this.onDocumentClick.bind(this)
     this.callFetchUsersAction = _.debounce(this.callFetchUsersAction, 500)
   }
-  // Lifecycle events
-  componentWillMount() {
+  // Lifecycle
+  componentWillMount () {
     document.addEventListener('click', this.onDocumentClick, false)
   }
 
-  componentWillUnmount() {
+  componentWillUnmount () {
     document.removeEventListener('click', this.onDocumentClick, false)
   }
 
-  callFetchUsersAction(query) {
+  callFetchUsersAction (query) {
     this.props.showLoadingStatus()
     this.props.fetchUsersAction(query)
   }
 
-  onDocumentClick(event) {
+  onDocumentClick (event) {
     if (String(event.target.tagName).toLowerCase() === 'input' && event.target.id === 'search-query') {
       return
     }
@@ -44,16 +43,16 @@ class SearchBar extends Component {
     this.setState({ showList: false })
   }
 
-  onInputChange(event) {
+  onInputChange (event) {
     this.setState({ value: event.target.value })
     this.callFetchUsersAction(this.state.value)
   }
 
-  onInputFocus(event) {
+  onInputFocus (event) {
     this.setState({ showList: true })
   }
 
-  onFormSubmit(event) {
+  onFormSubmit (event) {
     event.preventDefault()
 
     this.callFetchUsersAction(this.state.value)
@@ -63,37 +62,37 @@ class SearchBar extends Component {
     })
   }
 
-  render() {
+  render () {
     const isLoading = this.props.loading_status
-    
+
     return (
-      <div className={'pos-relative' + (this.state.showList ? ' open' : '') }>
-        <form onSubmit={this.onFormSubmit}>
-          <FormGroup controlId='search-query'>
-            <FormControl
-              type="text"
-              autoComplete="off"
-              spellCheck="false"
-              placeholder={isLoading ? 'Loading...' : 'Search for users on Twitter'}
-              value={this.state.value}
-              onChange={this.onInputChange}
-              onFocus={this.onInputFocus} />
-            <FormControl.Feedback />
-          </FormGroup>
-        </form>
-        <SearchResultList />
-      </div>
+    <div className={'pos-relative' + (this.state.showList ? ' open' : '')}>
+      <form onSubmit={this.onFormSubmit}>
+        <FormGroup controlId='search-query'>
+          <FormControl
+            type="text"
+            autoComplete="off"
+            spellCheck="false"
+            placeholder={isLoading ? 'Loading...' : 'Search for users on Twitter'}
+            value={this.state.value}
+            onChange={this.onInputChange}
+            onFocus={this.onInputFocus} />
+          <FormControl.Feedback />
+        </FormGroup>
+      </form>
+      <SearchResultList />
+    </div>
     )
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps (state) {
   return {
     loading_status: state.loading_status
   }
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps (dispatch) {
   return bindActionCreators({
     fetchUsersAction: fetchUsersAction,
     showLoadingStatus: showLoadingStatus
