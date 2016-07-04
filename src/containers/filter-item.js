@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { removeFilterAction } from '../actions/index'
+import { FaMinus } from 'react-icons/lib/fa'
 
 class FilterItem extends Component {
   constructor (props) {
@@ -46,7 +47,7 @@ class FilterItem extends Component {
     return (
     <div className="filter-item">
       <button type="button" className="btn btn-sm btn-secondary" onClick={this.onRemoveButtonClick}>
-        Remove
+        <FaMinus />Remove
       </button>
       <span>{this.getLabel(filter.key)}</span>
       <strong>{this.getLabel(filter.comparator)}</strong>

@@ -2,7 +2,7 @@ import { expect } from '../test_helper'
 import UsersReducer from '../../src/reducers/users-reducer'
 import { FETCH_USERS_ACTION } from '../../src/actions/types'
 
-describe('Users Reducer', () => {
+describe('Users reducer', () => {
   it('handles action with unknow types', () => {
     expect(UsersReducer(undefined, {})).to.eql([])
   })

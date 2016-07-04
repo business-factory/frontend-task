@@ -29,13 +29,7 @@ class SearchBar extends Component {
   componentWillUnmount () {
     document.removeEventListener('click', this.onDocumentClick, false)
   }
-
-  // componentWillReceiveProps (globalProps) {
-  //   if (globalProps.selected_user && globalProps.selected_user !== this.state.value) {
-  //     this.setState({ value: globalProps.selected_user.name })
-  //   }
-  // }
-
+  
   callFetchUsersAction (query) {
     this.props.showLoadingStatus()
     this.props.fetchUsersAction(query)

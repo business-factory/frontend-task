@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { addFilterAction } from '../actions/index'
+import { FaPlus } from 'react-icons/lib/fa'
 
 class FilterForm extends Component {
   constructor (props) {
@@ -102,7 +103,7 @@ class FilterForm extends Component {
           onChange={this.onInputChange} />
       </div>
       <button type="submit" className="btn btn-sm btn-secondary">
-        Add
+        <FaPlus />Add
       </button>
     </form>
     )

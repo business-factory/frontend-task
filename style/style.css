@@ -31,14 +31,16 @@ body{
   max-width: 400px;
 }
 .cover-page p {
-  width: 530px;
-  margin: 15px auto;
+  margin: 10px auto 30px auto;
   line-height: 1.4;
   text-align: center
 }
 .cover-page .search-bar{
   width: 500px;
   margin: 0 auto
+}
+.cover-page .search-bar .form-group{
+  margin-bottom: 0
 }
 
 /*component: search-bar*/
@@ -94,7 +96,7 @@ body{
 .selected-user-detail{
   font-size: .88rem;
   margin-bottom: 20px;
-  border-radius: none
+  border-radius: 0  
 }
 .selected-user-detail > div {
   display: flex;
@@ -113,6 +115,13 @@ body{
 .selected-user-detail img {
   width: 100%;
   max-width: 162px
+}
+.filter-item button svg,
+.tweet-query-filter button svg,
+.selected-user-detail ul li svg {
+  fill: #8899a6;
+  margin-right: 5px;
+  margin-top: -3px;
 }
 
 /*component: tweet-query-filter*/

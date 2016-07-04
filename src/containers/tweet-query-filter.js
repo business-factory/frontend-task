@@ -5,6 +5,7 @@ import { applyFilterAction, fetchTweetsAction, showLoadingStatus, clearAllFilter
 import FilterForm from './filter-form'
 import FilterItem from './filter-item'
 import ModalLoadedTweetsStatistics from '../components/modal-loaded-tweets-statistics'
+import { FaLineChart, FaRefresh, FaFilter } from 'react-icons/lib/fa'
 
 class TweetQueryFilter extends Component {
   constructor (props) {
@@ -178,13 +179,13 @@ class TweetQueryFilter extends Component {
       </div>
       <div className="tweet-query-filter-footer">
         {filters.length > 0 ? (<button type="button" className="btn btn-sm btn-primary" onClick={this.onFilterTweetsButtonClick}>
-                                 Search Tweets
+                                 <FaFilter />Search Tweets
                                </button>) : null}
         <button type="button" className="btn btn-sm btn-secondary pull-xs-right m-a-0" onClick={this.onReloadTweetsButtonClick}>
-          {!isLoading ? 'Reload all Tweets' : 'Loading...'}
+          <FaRefresh />{!isLoading ? 'Reload all Tweets' : 'Loading...'}
         </button>
         <button type="button" className="btn btn-sm btn-secondary" onClick={this.setModalVisible}>
-          Tweets Statistics
+          <FaLineChart />Tweets Statistics
         </button>
       </div>
       <ModalLoadedTweetsStatistics isVisible={this.state.isModalVisible} onModalClose={this.onModalClose} tweets={tweets} />

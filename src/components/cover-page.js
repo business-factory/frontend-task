@@ -29,10 +29,9 @@ export default class CoverPage extends Component {
     return (
     <div className="cover-page">
       <RoiHunterLogoLarge />
-      <p>
-        A Tweets analyzer developed by ROI Hunter
-      </p>
+      <p>Twitter performance manager</p>
       <SearchBar />
+      <small>Search for any Twitter account using @username or type it directly</small>
     </div>
     )
   }

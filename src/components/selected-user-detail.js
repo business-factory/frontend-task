@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { FaMapMarker, FaTwitter, FaStar, FaUser, FaThumbsOUp } from 'react-icons/lib/fa'
 
 export default class SelectUserDetail extends Component {
   linkify(text) {
@@ -23,13 +24,13 @@ export default class SelectUserDetail extends Component {
           </figure>
           <ul>
             <li className="highlight-field"><strong>{user.name}</strong></li>
-            <li className="opacity-5"><small> @{user.screen_name}</small></li>
-            <li>{user.location}</li>
+            <li className="opacity-5">@{user.screen_name}</li>
+            <li><FaMapMarker />{user.location}</li>
             <li dangerouslySetInnerHTML={{ __html: this.linkify(user.description) }}></li>
-            <li><strong>Followers</strong>: {parseInt(user.followers_count).toLocaleString() }</li>
-            <li><strong>Friends</strong>: {parseInt(user.friends_count).toLocaleString() }</li>
-            <li><strong>Listed</strong>: {parseInt(user.listed_count).toLocaleString() }</li>
-            <li><strong>Favourites</strong>: {parseInt(user.favourites_count).toLocaleString() }</li>
+            <li><FaTwitter /><strong>Tweets</strong>: {parseInt(user.statuses_count).toLocaleString() }</li>
+            <li><FaUser /><strong>Following</strong>: {parseInt(user.friends_count).toLocaleString() }</li>
+            <li><FaStar /><strong>Followers</strong>: {parseInt(user.followers_count).toLocaleString() }</li>
+            <li><FaThumbsOUp /><strong>Favourites</strong>: {parseInt(user.favourites_count).toLocaleString() }</li>
           </ul>
         </div>
       </div>
