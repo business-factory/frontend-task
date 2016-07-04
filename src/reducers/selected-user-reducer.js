@@ -1,4 +1,4 @@
-import { SELECT_USER_ACTION } from '../actions/index'
+import { SELECT_USER_ACTION } from '../actions/types'
 
 export default function selectedUserReducerDefinition (state = null, action) {
   switch (action.type) {

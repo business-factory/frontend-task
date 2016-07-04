@@ -1,3 +1,4 @@
+import { FETCH_TWEETS_ACTION, FETCH_USERS_ACTION, SELECT_USER_ACTION, SHOW_LOADING_ACTION, ADD_TWEET_FILTER_ACTION, REMOVE_TWEET_FILTER_ACTION, APPLY_TWEET_FILTER_ACTION, CLEAR_ALL_TWEET_FILTER_ACTION } from './types'
 import Codebird from '../../third-party-tools/codebird'
 // import Codebird from 'codebird'
 
@@ -6,17 +7,6 @@ import Codebird from '../../third-party-tools/codebird'
 const codeBird = new Codebird()
 codeBird.setConsumerKey('jPs0eIaJXwZsEcLTfLit5AnU4', 'rV5gk58dL41L8HKVZFjAqjYr54nXcdzHvabRWOtncy5qwfVDpB') // codeBird.setConsumerKey("API Key", "API Secret")
 codeBird.setToken('370190091-1WuJEBfGciKwKn3bg0ygWmNa0VhDUF2XiR5nYeQK', 'fIPVh2RUPINrmidNvjBpwuyos14cjT0IvYz1kRngTzaHm') // codeBird.setToken("	Access Token", "Access Token Secret")
-
-// Action types
-
-export const FETCH_TWEETS_ACTION = 'FETCH_TWEETS'
-export const FETCH_USERS_ACTION = 'FETCH_USERS'
-export const SELECT_USER_ACTION = 'SELECT_USER'
-export const SHOW_LOADING_ACTION = 'SHOW_LOADING'
-export const ADD_TWEET_FILTER_ACTION = 'ADD_TWEET_FILTER'
-export const REMOVE_TWEET_FILTER_ACTION = 'REMOVE_TWEET_FILTER'
-export const APPLY_TWEET_FILTER_ACTION = 'APPLY_TWEET_FILTER'
-export const CLEAR_ALL_TWEET_FILTER_ACTION = 'CLEAR_ALL_TWEET_FILTER'
 
 // Users
 export function fetchUsersAction (q, count = 7) {

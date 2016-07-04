@@ -30,11 +30,11 @@ class SearchBar extends Component {
     document.removeEventListener('click', this.onDocumentClick, false)
   }
 
-  componentWillReceiveProps (globalProps) {
-    if (globalProps.selected_user && globalProps.selected_user !== this.state.value) {
-      this.setState({ value: globalProps.selected_user.name })
-    }
-  }
+  // componentWillReceiveProps (globalProps) {
+  //   if (globalProps.selected_user && globalProps.selected_user !== this.state.value) {
+  //     this.setState({ value: globalProps.selected_user.name })
+  //   }
+  // }
 
   callFetchUsersAction (query) {
     this.props.showLoadingStatus()
@@ -56,6 +56,7 @@ class SearchBar extends Component {
 
   onInputFocus (event) {
     this.setState({ showList: true })
+    this.setState({ value: '' })
   }
 
   onFormSubmit (event) {

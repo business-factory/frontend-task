@@ -1,4 +1,4 @@
-import { FETCH_TWEETS_ACTION, FETCH_USERS_ACTION, SHOW_LOADING_ACTION  } from '../actions/index'
+import { FETCH_TWEETS_ACTION, FETCH_USERS_ACTION, SHOW_LOADING_ACTION  } from '../actions/types'
 
 const INITIAL_STATE = false
 
