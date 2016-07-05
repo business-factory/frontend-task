@@ -1,0 +1,28 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+  "standard.options": {
+    "globals": [
+      "$"
+    ],
+    "ignore": [
+      "node_modules/**",
+      "tmp/**"
+    ],
+    "parser": "babel-eslint"
+  },
+  "files.associations": {
+    "*.js": "javascriptreact"
+  },
+  "editor.tabSize": 2,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/node_modules": true,
+    "**/.vscode": true,
+    "**/.DS_Store": true
+  },
+  "ecmaFeatures": {
+    "modules": true
+  },
+  "workbench.editor.showTabs": true
+}

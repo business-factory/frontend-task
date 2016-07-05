@@ -1,0 +1,20 @@
+Twitter has changed its API
+
+https://www.youtube.com/watch?v=GQaPt-gQVRI
+https://www.youtube.com/watch?v=t5hD96EYAtU
+http://stackoverflow.com/questions/17049821/setting-up-twitter-api-getting-the-last-few-tweets
+https://webdevdoor.com/php/authenticating-twitter-feed-timeline-oauth
+https://github.com/abraham/twitteroauth
+https://twitteroauth.com/
+https://github.com/themattharris/tmhOAuth
+
+Doesn't worked
+https://github.com/BoyCook/TwitterJSClient
+
+API Endpoints
+https://api.twitter.com/1.1/users/search.json?
+https://api.twitter.com/1.1/statuses/user_timeline.json?
+
+https://dev.twitter.com/rest/reference/get/statuses/user_timeline?
+
+Explain the reasons about https://github.com/jublonet/codebird-js.git

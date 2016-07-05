@@ -1,0 +1,278 @@
+body{
+  background-color: #f5f8fa;
+  color: #313854;
+  font-family: Arial, sans-serif;
+}
+/*.app-container{}*/
+/*header-content*/
+.header-content{
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px
+}
+.header-content > *{
+  flex-grow: 1
+}
+.header-content .form-group{
+	margin-bottom: 0
+}
+
+.cover-page {
+  text-align: center;
+  padding-top: 15%;
+}
+.cover-page .logo {
+  max-width: 400px;
+  margin: 0 auto
+}
+.cover-page .logo img{
+  width: 100%;
+  max-width: 400px;
+}
+.cover-page p {
+  margin: 10px auto 30px auto;
+  line-height: 1.4;
+  text-align: center
+}
+.cover-page .search-bar{
+  width: 500px;
+  margin: 0 auto
+}
+.cover-page .search-bar .form-group{
+  margin-bottom: 0
+}
+
+/*component: search-bar*/
+.search-bar{
+  position: relative
+}
+
+/*component: search-result-list*/
+.open > .search-result-list{
+  display: block
+}
+.search-result-list {
+  display: none;
+  background-color: white;
+	box-shadow: 0 1px 8px rgba(0,0,0,0.15);
+  border:1px solid rgba(0,0,0,.15);
+  position: absolute;
+  width: 100%;
+  border-radius: 4px;
+  top: 39px
+}
+.search-result-list li {
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  color: #292f33;
+  cursor: pointer
+}
+.search-result-list li:hover {
+  background-color: #ABB8C2;
+  color: white
+}
+.search-result-list figure {
+  border-radius: 8px;
+  overflow: hidden;
+}
+.search-result-list li > *{
+  margin-right: 10px
+}
+.search-result-list li > *:last-child{
+  margin-right: 0
+}
+
+/*component: selected-user-detail*/
+.tweet-list,
+.tweet-query-filter,
+.selected-user-detail {
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+}
+.selected-user-detail{
+  font-size: .88rem;
+  margin-bottom: 20px;
+  border-radius: 0  
+}
+.selected-user-detail > div {
+  display: flex;
+  align-items: center
+}
+.selected-user-detail .highlight-field {
+    font-size: 1.3rem;
+}
+.selected-user-detail figure {
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fff;
+  border: 5px solid #e1e8ed;;
+  margin-right: 20px
+}
+.selected-user-detail img {
+  width: 100%;
+  max-width: 162px
+}
+.filter-item button svg,
+.tweet-query-filter button svg,
+.selected-user-detail ul li svg {
+  fill: #8899a6;
+  margin-right: 5px;
+  margin-top: -3px;
+}
+
+/*component: tweet-query-filter*/
+.tweet-query-filter {
+  margin-bottom: 20px;
+  overflow: hidden
+}
+.tweet-query-filter-header,
+.tweet-query-filter-footer{
+  padding: 0.95rem;
+  background-color: #fff;
+}
+.tweet-query-filter-header{
+  border-bottom: 1px solid #eceeef;
+}
+.tweet-query-filter-footer {
+  border-top: 1px solid #eceeef;
+}
+.tweet-query-filter-footer > *{
+  margin-right: 10px;
+}
+.tweet-query-filter-body{
+  padding: 0;
+}
+.tweet-query-filter-header small {
+  font-size: 70%;
+}
+
+/*component: filter-form*/
+.tweet-query-filter-header .filter-form select.form-control,
+.tweet-query-filter-header .filter-form input.form-control {
+  height: 1.7rem;
+  padding: 0;
+  font-size: 0.8rem;
+  border-radius: 0
+}
+.tweet-query-filter-header .filter-form .form-control:nth-child(1) {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px
+}
+.tweet-query-filter-header button{
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+	border-top-right-radius: 4px;
+	border-bottom-right-radius: 4px; 
+}
+
+/*component: filter-form*/
+.filter-item{
+  padding: 0.95rem
+}
+.filter-item > * {
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+.filter-item:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+/*component: tweet-list*/
+.tweet-list thead tr th {
+  cursor: pointer
+}
+.tweet-list thead tr th .caret{
+  width: 0;
+  height: 0;
+  border-style: solid;
+  position: absolute;
+  margin-left: 4px
+}
+.tweet-list thead tr th .caret.asc{
+  margin-top: 6px;
+  border-width: 0 3px 3px 3px;
+  border-color: transparent transparent #0275d8 transparent;
+}
+.tweet-list thead tr th .caret.desc{
+  margin-top: 7px;
+  border-width: 3px 3px 0 3px;
+  border-color: #0275d8 transparent transparent transparent;
+}
+
+.modal-header,
+.modal-footer{
+  padding: 7px 15px;
+}
+.modal-title{
+  text-align: center;
+  color: #0275d8;
+}
+.modal-backdrop.in{
+  opacity: 0.65
+}
+.modal-backdrop {
+  background-color: #4e585c;
+}
+.modal-header .close {
+  margin-top: 8px;
+}
+.tweets-stats{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.tweets-stats ul,
+.tweets-stats article {
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #e1e8ed;
+  margin: 10px;
+  width: 265px;
+}
+.tweets-stats article h5{
+  color: #0275d8;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.tweets-stats article span{
+  font-size: 0.8rem;
+}
+.tweets-stats ul{
+  text-align: left;
+  line-height: 2;
+  padding: 0
+}
+.tweets-stats ul li{
+  padding: 0 10px;
+}
+.tweets-stats ul li:nth-of-type(odd) {
+  background-color: rgba(0,0,0,.05);
+}
+
+/*resets*/
+ul,li,figure{padding:0;margin:0}
+li{list-style:none}
+.table th, .table td {
+  padding: 0.95rem;
+  font-size: 0.8rem
+}
+
+/*helpers*/
+.pos-relative{
+  position: relative
+}
+.opacity-5 {
+  opacity: .5
+}
+.text-center{
+  text-align: center
+}
+.hidden {
+  visibility: hidden
+}
