@@ -7,7 +7,7 @@ The goal of the task is to implement simple single-page app. It should include t
 - Statistics of all loaded tweets - shown in modal window and including these stats: sum of all likes, avarage likes per tweet, all mentions in tweets with number of unique occurences (eg. @username: 5x).
 
 Technical requirements:
-- Usage of ES2015+ syntax / language features
+- Usage of ES2015+ syntax / language features (TypeScript is a :+1: )
 - Utilize React and Twitter Bootstrap for UI (eg. https://react-bootstrap.github.io/components/alerts/)
 - You may also use Redux and Immutablejs for state management and data model
 - Development in GitHub repository (share it with us and commit to it as you progress)
