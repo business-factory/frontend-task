@@ -9,7 +9,7 @@ The goal of the task is to implement simple single-page app. It should include t
 Technical requirements:
 - Usage of ES2015+ syntax / language features (TypeScript is a :+1: )
 - Utilize React and Twitter Bootstrap for UI (eg. https://react-bootstrap.github.io/components/alerts/)
-- You may also use Redux and Immutablejs for state management and data model
+- You may also use Redux for state management and data model
 - Development in GitHub repository (share it with us and commit to it as you progress)
 - As a scaffolding tool we recommend to use [Create React App](https://github.com/facebook/create-react-app).
 
